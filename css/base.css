@@ -70,7 +70,7 @@ a.navbar-item:hover {
 }
 
 .jGravity {
-	padding: 50%;
+	padding: 0%;
 	max-width: 100vw;
 	transition: .1s ease-out;
 }
