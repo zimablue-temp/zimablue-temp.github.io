@@ -5,11 +5,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Zimablue</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css">
-    <link rel="stylesheet" href="https://use.typekit.net/lnu1fpi.css">
-    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <link rel="stylesheet" type="text/css" href="src/css/bulma.css" />
+    <link rel="stylesheet" type="text/css" href="src/css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="src/css/lnu1fpi.css" />
 
-    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script src="src/js/webfont.js"></script>
     <script>document.documentElement.className = "js";</script>
 </head>
 
@@ -20,7 +20,7 @@
                 <div class="container">
                     <div class="navbar-brand">
                         <a class="navbar-item" href="#">
-                            <img src="logo.svg" alt="Logo" />
+                            <img src="src/img/zimablue.svg" alt="Logo" />
                         </a>
                         <span class="navbar-burger" data-target="navbarMenuHeroB">
                             <span></span>
@@ -33,11 +33,11 @@
                         <div class="navbar-end">
                             <a class="navbar-item has-text-black is-uppercase" href="#about"> О&nbsp;нас </a>
                             <a class="navbar-item has-text-black is-uppercase" href="#services"> Услуги </a>
-                            <a class="navbar-item has-text-black is-uppercase" href="#benefits"> Преимущества </a>
+                            <!-- <a class="navbar-item has-text-black is-uppercase" href="#benefits"> Преимущества </a> -->
                             <a class="navbar-item has-text-black is-uppercase" href="#research"> Исследования </a>
                             <a class="navbar-item has-text-black is-uppercase" href="#feedback"> Отзывы </a>
                             <!-- <a class="navbar-item has-text-black is-uppercase" href="#partners"> Партнеры </a> -->
-                            <a class="navbar-item has-text-black is-uppercase" href="#contacts"> Контакты </a>
+                            <!-- <a class="navbar-item has-text-black is-uppercase" href="#contacts"> Контакты </a> -->
                             <a class="navbar-item has-text-black is-uppercase"> Заказать исследование </a>
                         </div>
                     </div>
@@ -50,23 +50,23 @@
             </div>
         </div>
         <div class="jGravity">
-            <span class="tag">UX/UI</span>
+            <span class="tag colorful">UX/UI</span>
             <span class="tag">тренды</span>
             <span class="tag">перспективы</span>
-            <span class="tag">аудитории</span>
+            <span class="tag colorful">аудитории</span>
             <span class="tag">бренды</span>
             <span class="tag">гипотезы</span>
-            <span class="tag">фокус-группы</span>
+            <span class="tag colorful">фокус-группы</span>
             <span class="tag">реклама</span>
             <span class="tag">дизайн</span>
-            <span class="tag">эффективность</span>
+            <span class="tag colorful">эффективность</span>
         </div>
     </section>
-    <section class="section has-background-white is-medium" id="about">
+    <section class="section has-background-white is-medium" id="about" style="margin-top: 144px;">
         <div class="columns">
             <div class="column is-four-fifths">
                 <div class="title-with-icon">
-                    <img src="icon-arrow-left.svg">
+                    <img src="src/img/icons/icon-arrow-left.svg">
                     <p>О&nbsp;нас</p>
                 </div>
                 <div data-effect-4>
@@ -81,7 +81,7 @@
     </section>
     <section class="section has-background-white is-medium" id="services">
         <div class="title-with-icon">
-            <img src="icon-arrow-left.svg">
+            <img src="src/img/icons/icon-arrow-left.svg">
             <p>Услуги</p>
         </div>
         <div class="columns">
@@ -91,11 +91,14 @@
                     <p class="title">
                         <i>Качественные</i> исследования
                     </p>
-                    <p class="subtitle">
-                        фокус-группы, offline 1-to-1&nbsp;опросы, UX/UI исследования, анализ аудитории, конкурентный
-                        анализ,
-                        mystery shopping
-                    </p>
+                    <ul class="subtitle">
+                        <li>фокус-группы</li>
+                        <li>offline 1-to-1&nbsp;опросы</li>
+                        <li>UX/UI исследования</li>
+                        <li>анализ аудитории</li>
+                        <li>конкурентный анализ</li>
+                        <li>mystery shopping</li>
+                    </ul>
                     <p class="cta"><a href="">Заказать исследование</a></p>
                 </div>
             </div>
@@ -105,9 +108,10 @@
                     <p class="title">
                         <i>Количественные</i> исследования
                     </p>
-                    <p class="subtitle">
-                        Ad&nbsp;tracking, Brand Health Tracking online
-                    </p>
+                    <ul class="subtitle">
+                        <li>Ad&nbsp;tracking</li>
+                        <li>Brand Health Tracking online</li>
+                    </ul>
                     <p class="cta"><a href="">Заказать исследование</a></p>
                 </div>
             </div>
@@ -117,11 +121,13 @@
                     <p class="title">
                         <i>Маркетинговые</i> исследования
                     </p>
-                    <p class="subtitle">
-                        Позиции и&nbsp;перспективы на&nbsp;рынке, Размер рынка,Анализ конкурентов, Анализ аудитории,Ad
-                        tracking,
-                        Анализ продуктовых и&nbsp;маркетинговых активностей,Sensitivity to&nbsp;pricing
-                    </p>
+                    <ul class="subtitle">
+                        <li>Позиции и&nbsp;перспективы на&nbsp;рынке</li>
+                        <li>Размер рынка</li>
+                        <li>Анализ конкурентов и аудитории</li>
+                        <li>Анализ продуктовых и&nbsp;маркетинговых активностей</li>
+                        <li>Sensitivity to&nbsp;pricing</li>
+                    </ul>
                     <p class="cta"><a href="">Заказать исследование</a></p>
                 </div>
             </div>
@@ -131,32 +137,31 @@
         <div class="columns">
             <div class="column is-three-fifths">
                 <div class="title-with-icon">
-                    <img src="icon-arrow-left.svg">
+                    <img src="src/img/icons/icon-arrow-left.svg">
                     <p>Преимущества</p>
                 </div>
                 <p class="has-text-black is-black is-size-3">
-                    Мы&nbsp;используем <i>уникальный алгоритм</i> обработки данных. А&nbsp;также у&nbsp;нас есть
-                    <i>разработанный курс по&nbsp;исследованиям</i> для университетов и&nbsp;онлайн-платформ.
+                    Мы&nbsp;используем <i>уникальный алгоритм</i> обработки данных.
                 </p>
             </div>
         </div>
     </section>
-        <section class="has-background-white is-medium" style="padding-bottom: 144px;">
+    <section class="has-background-white is-medium" style="padding-bottom: 144px;">
         <div class="services-ticker-block">
             <div class="stb_line_single">
-                <a class="stb-item">
+                <a class="stb-item is-clickable">
                     <p class="title">5</p>
                     <p class="subtitle">лет на&nbsp;рынке</p>
                 </a>
-                <a class="stb-item">
+                <a class="stb-item is-clickable">
                     <p class="title">120<small>+</small></p>
                     <p class="subtitle">проведенных фокус-групп</p>
                 </a>
-                <a class="stb-item">
+                <a class="stb-item is-clickable">
                     <p class="title accent">350<small>+</small></p>
                     <p class="subtitle">онлайн исследований</p>
                 </a>
-                <a class="stb-item">
+                <a class="stb-item is-clickable">
                     <p class="title"><small>от</small>&nbsp;3&nbsp;000 <small>до</small>&nbsp;10&nbsp;000
                         <small>человек</small>
                     </p>
@@ -167,85 +172,65 @@
     </section>
     <section class="section has-background-white is-medium" id="research">
         <div class="columns">
-            <div class="column is-four-fifths">
+            <div class="column is-three-fifths">
                 <div class="title-with-icon">
-                    <img src="icon-arrow-left.svg">
+                    <img src="src/img/icons/icon-arrow-left.svg">
                     <p>Наши исследования</p>
                 </div>
                 <p class="has-text-black is-black is-size-3">
-                    У&nbsp;нас есть
+                    А&nbsp;также у&nbsp;нас есть
                     <i>разработанный курс по&nbsp;исследованиям</i> для университетов и&nbsp;онлайн-платформ.
                 </p>
             </div>
         </div>
         <div class="columns">
-            <div class="column is-four-fifths">
-                <div class="cards-research is-clickable is-flex is-flex-direction-row is-justify-content-space-between">
-                    <p>Казахстанские Тренды
-                        360:потребительские тенденции среди казахстанцев от&nbsp;артистов до&nbsp;автомобилей</p>
-                    <div class="icon">
-                        <svg width="26" height="32" viewBox="0 0 26 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M13.2933 0C12.8397 0 12.4685 0.371176 12.4685 0.824836V21.4457L3.27983 13.4036C2.9334 13.1066 2.41375 13.1396 2.11681 13.4778C1.81987 13.8243 1.85286 14.3439 2.19105 14.6408L12.749 23.879C12.8892 24.0027 13.0789 24.0852 13.2768 24.0852C13.2768 24.0852 13.2768 24.0852 13.2851 24.0852H13.2933C13.4996 24.0852 13.681 24.0027 13.8212 23.879L24.3791 14.6408C24.7256 14.3439 24.7586 13.816 24.4534 13.4778C24.1564 13.1314 23.6285 13.0984 23.2904 13.4036L14.1017 21.4457V0.824836C14.1017 0.371176 13.7305 0 13.2768 0L13.2933 0Z"
-                                fill="#212121" />
-                            <path
-                                d="M0.59375 31.1764C0.59375 31.6301 0.964926 32.0012 1.41859 32.0012H25.1739C25.6275 32.0012 25.9987 31.6301 25.9987 31.1764C25.9987 30.7227 25.6275 30.3516 25.1739 30.3516H1.41859C0.964926 30.3516 0.59375 30.7227 0.59375 31.1764Z"
-                                fill="#212121" />
-                        </svg>
-                    </div>
+            <div class="column">
+                <div
+                    class="cards-service is-clickable is-flex is-flex-direction-column is-justify-content-space-between">
+                    <p class="title">
+                        Казахстанские тренды 360: <i>потребительские тенденции</i> среди казахстанцев от&nbsp;артистов
+                        до&nbsp;автомобилей
+                    </p>
+                    <p class="cta"><a href="">Скачать исследование</a></p>
                 </div>
-                <div class="cards-research is-clickable is-flex is-flex-direction-row is-justify-content-space-between">
-                    <p>Какие бренды пользуются
-                        популярностью у&nbsp;молодежи РК?</p>
-                    <div class="icon">
-                        <svg width="26" height="32" viewBox="0 0 26 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M13.2933 0C12.8397 0 12.4685 0.371176 12.4685 0.824836V21.4457L3.27983 13.4036C2.9334 13.1066 2.41375 13.1396 2.11681 13.4778C1.81987 13.8243 1.85286 14.3439 2.19105 14.6408L12.749 23.879C12.8892 24.0027 13.0789 24.0852 13.2768 24.0852C13.2768 24.0852 13.2768 24.0852 13.2851 24.0852H13.2933C13.4996 24.0852 13.681 24.0027 13.8212 23.879L24.3791 14.6408C24.7256 14.3439 24.7586 13.816 24.4534 13.4778C24.1564 13.1314 23.6285 13.0984 23.2904 13.4036L14.1017 21.4457V0.824836C14.1017 0.371176 13.7305 0 13.2768 0L13.2933 0Z"
-                                fill="#212121" />
-                            <path
-                                d="M0.59375 31.1764C0.59375 31.6301 0.964926 32.0012 1.41859 32.0012H25.1739C25.6275 32.0012 25.9987 31.6301 25.9987 31.1764C25.9987 30.7227 25.6275 30.3516 25.1739 30.3516H1.41859C0.964926 30.3516 0.59375 30.7227 0.59375 31.1764Z"
-                                fill="#212121" />
-                        </svg>
-                    </div>
+            </div>
+            <div class="column">
+                <div
+                    class="cards-service is-clickable is-flex is-flex-direction-column is-justify-content-space-between">
+                    <p class="title">
+                        Какие бренды пользуются <i>популярностью у&nbsp;молодежи</i> РК?
+                    </p>
+                    <p class="cta"><a href="">Скачать исследование</a></p>
                 </div>
-                <div class="cards-research is-clickable is-flex is-flex-direction-row is-justify-content-space-between">
-                    <p>Корпоративная ответственность</p>
-                    <div class="icon">
-                        <svg width="26" height="32" viewBox="0 0 26 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M13.2933 0C12.8397 0 12.4685 0.371176 12.4685 0.824836V21.4457L3.27983 13.4036C2.9334 13.1066 2.41375 13.1396 2.11681 13.4778C1.81987 13.8243 1.85286 14.3439 2.19105 14.6408L12.749 23.879C12.8892 24.0027 13.0789 24.0852 13.2768 24.0852C13.2768 24.0852 13.2768 24.0852 13.2851 24.0852H13.2933C13.4996 24.0852 13.681 24.0027 13.8212 23.879L24.3791 14.6408C24.7256 14.3439 24.7586 13.816 24.4534 13.4778C24.1564 13.1314 23.6285 13.0984 23.2904 13.4036L14.1017 21.4457V0.824836C14.1017 0.371176 13.7305 0 13.2768 0L13.2933 0Z"
-                                fill="#212121" />
-                            <path
-                                d="M0.59375 31.1764C0.59375 31.6301 0.964926 32.0012 1.41859 32.0012H25.1739C25.6275 32.0012 25.9987 31.6301 25.9987 31.1764C25.9987 30.7227 25.6275 30.3516 25.1739 30.3516H1.41859C0.964926 30.3516 0.59375 30.7227 0.59375 31.1764Z"
-                                fill="#212121" />
-                        </svg>
-                    </div>
+            </div>
+            <div class="column">
+                <div
+                    class="cards-service is-clickable is-flex is-flex-direction-column is-justify-content-space-between">
+                    <p class="title">
+                        Корпоративная <i>ответственность</i>
+                    </p>
+                    <p class="cta"><a href="">Скачать исследование</a></p>
                 </div>
-                <div class="cards-research is-clickable is-flex is-flex-direction-row is-justify-content-space-between">
-                    <p>Кредиты</p>
-                    <div class="icon">
-                        <svg width="26" height="32" viewBox="0 0 26 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M13.2933 0C12.8397 0 12.4685 0.371176 12.4685 0.824836V21.4457L3.27983 13.4036C2.9334 13.1066 2.41375 13.1396 2.11681 13.4778C1.81987 13.8243 1.85286 14.3439 2.19105 14.6408L12.749 23.879C12.8892 24.0027 13.0789 24.0852 13.2768 24.0852C13.2768 24.0852 13.2768 24.0852 13.2851 24.0852H13.2933C13.4996 24.0852 13.681 24.0027 13.8212 23.879L24.3791 14.6408C24.7256 14.3439 24.7586 13.816 24.4534 13.4778C24.1564 13.1314 23.6285 13.0984 23.2904 13.4036L14.1017 21.4457V0.824836C14.1017 0.371176 13.7305 0 13.2768 0L13.2933 0Z"
-                                fill="#212121" />
-                            <path
-                                d="M0.59375 31.1764C0.59375 31.6301 0.964926 32.0012 1.41859 32.0012H25.1739C25.6275 32.0012 25.9987 31.6301 25.9987 31.1764C25.9987 30.7227 25.6275 30.3516 25.1739 30.3516H1.41859C0.964926 30.3516 0.59375 30.7227 0.59375 31.1764Z"
-                                fill="#212121" />
-                        </svg>
-                    </div>
+            </div>
+        </div>
+        <div class="columns">
+            <div class="column"></div>
+            <div class="column">
+                <div
+                    class="cards-service is-clickable is-flex is-flex-direction-column is-justify-content-space-between">
+                    <p class="title">
+                        Кредиты
+                    </p>
+                    <p class="cta"><a href="">Скачать исследование</a></p>
                 </div>
-                <div class="cards-research is-clickable is-flex is-flex-direction-row is-justify-content-space-between">
-                    <p>Контент языки</p>
-                    <div class="icon">
-                        <svg width="26" height="32" viewBox="0 0 26 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M13.2933 0C12.8397 0 12.4685 0.371176 12.4685 0.824836V21.4457L3.27983 13.4036C2.9334 13.1066 2.41375 13.1396 2.11681 13.4778C1.81987 13.8243 1.85286 14.3439 2.19105 14.6408L12.749 23.879C12.8892 24.0027 13.0789 24.0852 13.2768 24.0852C13.2768 24.0852 13.2768 24.0852 13.2851 24.0852H13.2933C13.4996 24.0852 13.681 24.0027 13.8212 23.879L24.3791 14.6408C24.7256 14.3439 24.7586 13.816 24.4534 13.4778C24.1564 13.1314 23.6285 13.0984 23.2904 13.4036L14.1017 21.4457V0.824836C14.1017 0.371176 13.7305 0 13.2768 0L13.2933 0Z"
-                                fill="#212121" />
-                            <path
-                                d="M0.59375 31.1764C0.59375 31.6301 0.964926 32.0012 1.41859 32.0012H25.1739C25.6275 32.0012 25.9987 31.6301 25.9987 31.1764C25.9987 30.7227 25.6275 30.3516 25.1739 30.3516H1.41859C0.964926 30.3516 0.59375 30.7227 0.59375 31.1764Z"
-                                fill="#212121" />
-                        </svg>
-                    </div>
+            </div>
+            <div class="column">
+                <div
+                    class="cards-service is-clickable is-flex is-flex-direction-column is-justify-content-space-between">
+                    <p class="title">
+                        Контент языки
+                    </p>
+                    <p class="cta"><a href="">Скачать исследование</a></p>
                 </div>
             </div>
         </div>
@@ -254,7 +239,7 @@
         <div class="columns">
             <div class="column is-four-fifths">
                 <div class="title-with-icon">
-                    <img src="icon-arrow-left.svg">
+                    <img src="src/img/icons/icon-arrow-left.svg">
                     <p>Рекомендательные письма</p>
                 </div>
                 <div class="tabs is-block">
@@ -294,7 +279,7 @@
         <div class="columns">
             <div class="column is-four-fifths">
                 <div class="title-with-icon">
-                    <img src="icon-arrow-left.svg">
+                    <img src="src/img/icons/icon-arrow-left.svg">
                     <p>Партнеры</p>
                 </div>
             </div>
@@ -303,29 +288,30 @@
     <section class="has-background-white is-medium" style="padding-bottom: 144px;">
         <div class="services-ticker-block" style="margin-top: 0;">
             <div class="stb_line_single">
-                <a class="stb-item">
-                    <img src="airastana.svg" alt="Air Astana" class="logo-partners is-clickable" />
+                <a class="stb-item is-clickable">
+                    <img src="src/img/partners/airastana.svg" alt="Air Astana" class="logo-partners is-clickable" />
                 </a>
-                <a class="stb-item">
-                    <img src="bigroup.svg" alt="BI Group" class="logo-partners is-clickable" />
+                <a class="stb-item is-clickable">
+                    <img src="src/img/partners/bigroup.svg" alt="BI Group" class="logo-partners is-clickable" />
                 </a>
-                <a class="stb-item">
-                    <img src="glovo.svg" alt="Glovo" class="logo-partners is-clickable" />
+                <a class="stb-item is-clickable">
+                    <img src="src/img/partners/glovo.svg" alt="Glovo" class="logo-partners is-clickable" />
                 </a>
-                <a class="stb-item">
-                    <img src="homecreditbank.svg" alt="Home Credit Bank" class="logo-partners is-clickable" />
+                <a class="stb-item is-clickable">
+                    <img src="src/img/partners/homecreditbank.svg" alt="Home Credit Bank"
+                        class="logo-partners is-clickable" />
                 </a>
-                <a class="stb-item">
-                    <img src="jusan.svg" alt="Jusan" class="logo-partners is-clickable" />
+                <a class="stb-item is-clickable">
+                    <img src="src/img/partners/jusan.svg" alt="Jusan" class="logo-partners is-clickable" />
                 </a>
-                <a class="stb-item">
-                    <img src="olx.svg" alt="OLX" class="logo-partners is-clickable" />
+                <a class="stb-item is-clickable">
+                    <img src="src/img/partners/olx.svg" alt="OLX" class="logo-partners is-clickable" />
                 </a>
-                <a class="stb-item">
-                    <img src="tele2.svg" alt="Tele2" class="logo-partners is-clickable" />
+                <a class="stb-item is-clickable">
+                    <img src="src/img/partners/tele2.svg" alt="Tele2" class="logo-partners is-clickable" />
                 </a>
-                <a class="stb-item">
-                    <img src="yandexgo.svg" alt="Yandex Go" class="logo-partners is-clickable" />
+                <a class="stb-item is-clickable">
+                    <img src="src/img/partners/yandexgo.svg" alt="Yandex Go" class="logo-partners is-clickable" />
                 </a>
             </div>
         </div>
@@ -334,11 +320,14 @@
         <div class="columns">
             <div class="column is-four-fifths">
                 <div class="title-with-icon">
-                    <img src="icon-arrow-left.svg">
+                    <img src="src/img/icons/icon-arrow-left.svg">
                     <p>Контакты</p>
                 </div>
-                <p class="has-text-black is-black is-size-3">email: <a href="mailto:info@zimablue.org?subject=Здравствуйте, пишу вам с вашего сайта" target="_blank" class="text-links">info@zimablue.org</a></p>
-                <p class="has-text-black is-black is-size-3">instagram: <a href="https://www.instagram.com/zimablue.co/" target="_blank" class="text-links">@zimablue.co</a></p>
+                <p class="has-text-black is-black is-size-3">email: <a
+                        href="mailto:info@zimablue.org?subject=Здравствуйте, пишу вам с вашего сайта" target="_blank"
+                        class="text-links">info@zimablue.org</a></p>
+                <p class="has-text-black is-black is-size-3">instagram: <a href="https://www.instagram.com/zimablue.co/"
+                        target="_blank" class="text-links">@zimablue.co</a></p>
             </div>
         </div>
     </section>
@@ -349,140 +338,54 @@
             <a class="tag" href="#benefits"> Преимущества </a>
             <a class="tag" href="#research"> Исследования </a>
             <a class="tag" href="#feedback"> Отзывы </a>
-            <a class="tag" href="https://t.me/share/url?url=https://t.me/stitre&text=Здравствуйте! Я хочу заказать исследование." target="_blank"> Заказать исследование </a>
+            <a class="tag" href="" target="_blank"> Заказать исследование <svg width="21" height="23"
+                    viewBox="0 0 21 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_379_44)">
+                        <path
+                            d="M14.8361 22.308C19.8174 20.4956 21.4577 16.6271 19.4339 11.0695L18.7011 9.04077C17.9582 6.99839 16.4994 6.11509 15.3666 6.52524C15.1127 6.61314 15.0248 6.79868 15.1127 7.04282L15.5147 8.15503C15.6468 8.51509 15.5312 8.77476 15.3039 8.85728C15.0698 8.94282 14.8095 8.81821 14.6774 8.45815L14.4023 7.69751C13.9598 6.47378 12.8789 5.9562 11.8242 6.34683C11.3359 6.52261 11.1992 6.79605 11.3457 7.19946L11.8845 8.67301C12.0067 9.03307 11.8912 9.2897 11.6706 9.37525C11.4328 9.45777 11.1762 9.33316 11.0471 8.97612L10.5474 7.61372C10.0494 6.23677 9.01121 5.87847 7.97908 6.24956C7.52986 6.41558 7.36385 6.71831 7.5073 7.10894L8.52459 9.90084C8.64988 10.2542 8.53435 10.5176 8.31375 10.5964C8.07293 10.6856 7.81931 10.561 7.68728 10.201L4.53123 1.53794C4.21199 0.659037 3.47146 0.309818 2.72927 0.583256C1.96922 0.860404 1.61834 1.60395 1.93084 2.48286L6.38553 14.7107C6.48387 14.9923 6.35017 15.2213 6.14812 15.2896C5.97469 15.3519 5.78172 15.3152 5.55574 15.0727L2.3822 11.7305C1.89763 11.2129 1.40262 11.1145 0.919021 11.291C0.10242 11.587 -0.16096 12.311 0.0929467 12.9909C0.17781 13.2297 0.308474 13.4317 0.451247 13.6166L4.54265 18.7983C7.52849 22.584 11.2537 23.6163 14.8361 22.308Z"
+                            fill="white" fill-opacity="1" />
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_379_44">
+                            <rect width="20.6424" height="22.8495" fill="white" />
+                        </clipPath>
+                    </defs>
+                </svg>
+            </a>
             <a class="tag" href="https://www.instagram.com/zimablue.co/" target="_blank"> Instagram </a>
         </div>
-        <img src="icon-hand.svg" class="icon-hand" />
+        <!-- <img src="src/img/icons/icon-hand.svg" class="icon-hand" /> -->
+        <p class="has-text-right py-3">Собрано <a href="http://tinystudio.cc" class="ts" target="_blank">Tiny
+            Studio</a>, 2024</p>
     </section>
 </body>
 
+<!-- Javascript -->
+<script src="src/js/jquery.js"></script>
+<script src="src/js/bulma.js"></script>
 <!-- Gravity Effect -->
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="jGravity.js"></script>
+<script type="text/javascript" src="src/js/jGravity.js"></script>
 <script>
     $(document).ready(() => {
         $('section.hero').jGravity({
             target: 'span',
-            weight: 10,
+            weight: 5,
             depth: 1,
-            drag: true
+            drag: true,
+            interval: 400
         });
     });
 </script>
 <!-- Scroll Text Effect -->
-<script src="js/gsap.min.js"></script>
-<script src="js/ScrollTrigger.min.js"></script>
-<script src="js/split-type.min.js"></script>
-<script src="js/lenis.min.js"></script>
-<script src="js/smoothscroll.js"></script>
-<script type="module" src="js/index.js"></script>
+<script src="src/js/gsap.min.js"></script>
+<script src="src/js/ScrollTrigger.min.js"></script>
+<script src="src/js/split-type.min.js"></script>
+<script src="src/js/lenis.min.js"></script>
+<script src="src/js/smoothscroll.js"></script>
+<script src="src/js/index.js" type="module"></script>
 <!-- Running Line -->
-<script>
-    gsap.utils.toArray('.stb_line_single').forEach((line, i) => {
-        const links = line.querySelectorAll("a"),
-            tl = horizontalLoop(links, {
-                repeat: -1,
-                speed: 1 + i * 0.5,
-                reversed: i ? true : false,
-                paddingRight: parseFloat(gsap.getProperty(links[0], "marginRight", "px")) // otherwise first element would be right up against the last when it loops. In this layout, the spacing is done with marginRight.
-            });
-        links.forEach(link => {
-            link.addEventListener("mouseenter", () => gsap.to(tl, { timeScale: 0, overwrite: true }));
-            link.addEventListener("mouseleave", () => gsap.to(tl, { timeScale: i ? -1 : 1, overwrite: true }));
-        });
-    });
-    /*
-    This helper function makes a group of elements animate along the x-axis in a seamless, responsive loop.
-    
-    Features:
-     - Uses xPercent so that even if the widths change (like if the window gets resized), it should still work in most cases.
-     - When each item animates to the left or right enough, it will loop back to the other side
-     - Optionally pass in a config object with values like "speed" (default: 1, which travels at roughly 100 pixels per second), paused (boolean),  repeat, reversed, and paddingRight.
-     - The returned timeline will have the following methods added to it:
-       - next() - animates to the next element using a timeline.tweenTo() which it returns. You can pass in a vars object to control duration, easing, etc.
-       - previous() - animates to the previous element using a timeline.tweenTo() which it returns. You can pass in a vars object to control duration, easing, etc.
-       - toIndex() - pass in a zero-based index value of the element that it should animate to, and optionally pass in a vars object to control duration, easing, etc. Always goes in the shortest direction
-       - current() - returns the current index (if an animation is in-progress, it reflects the final index)
-       - times - an Array of the times on the timeline where each element hits the "starting" spot. There's also a label added accordingly, so "label1" is when the 2nd element reaches the start.
-     */
-    function horizontalLoop(items, config) {
-        items = gsap.utils.toArray(items);
-        config = config || {};
-        let tl = gsap.timeline({ repeat: config.repeat, paused: config.paused, defaults: { ease: "none" }, onReverseComplete: () => tl.totalTime(tl.rawTime() + tl.duration() * 100) }),
-            length = items.length,
-            startX = items[0].offsetLeft,
-            times = [],
-            widths = [],
-            xPercents = [],
-            curIndex = 0,
-            pixelsPerSecond = (config.speed || 1) * 100,
-            snap = config.snap === false ? v => v : gsap.utils.snap(config.snap || 1), // some browsers shift by a pixel to accommodate flex layouts, so for example if width is 20% the first element's width might be 242px, and the next 243px, alternating back and forth. So we snap to 5 percentage points to make things look more natural
-            totalWidth, curX, distanceToStart, distanceToLoop, item, i;
-        gsap.set(items, { // convert "x" to "xPercent" to make things responsive, and populate the widths/xPercents Arrays to make lookups faster.
-            xPercent: (i, el) => {
-                let w = widths[i] = parseFloat(gsap.getProperty(el, "width", "px"));
-                xPercents[i] = snap(parseFloat(gsap.getProperty(el, "x", "px")) / w * 100 + gsap.getProperty(el, "xPercent"));
-                return xPercents[i];
-            }
-        });
-        gsap.set(items, { x: 0 });
-        totalWidth = items[length - 1].offsetLeft + xPercents[length - 1] / 100 * widths[length - 1] - startX + items[length - 1].offsetWidth * gsap.getProperty(items[length - 1], "scaleX") + (parseFloat(config.paddingRight) || 0);
-        for (i = 0; i < length; i++) {
-            item = items[i];
-            curX = xPercents[i] / 100 * widths[i];
-            distanceToStart = item.offsetLeft + curX - startX;
-            distanceToLoop = distanceToStart + widths[i] * gsap.getProperty(item, "scaleX");
-            tl.to(item, { xPercent: snap((curX - distanceToLoop) / widths[i] * 100), duration: distanceToLoop / pixelsPerSecond }, 0)
-                .fromTo(item, { xPercent: snap((curX - distanceToLoop + totalWidth) / widths[i] * 100) }, { xPercent: xPercents[i], duration: (curX - distanceToLoop + totalWidth - curX) / pixelsPerSecond, immediateRender: false }, distanceToLoop / pixelsPerSecond)
-                .add("label" + i, distanceToStart / pixelsPerSecond);
-            times[i] = distanceToStart / pixelsPerSecond;
-        }
-        function toIndex(index, vars) {
-            vars = vars || {};
-            (Math.abs(index - curIndex) > length / 2) && (index += index > curIndex ? -length : length); // always go in the shortest direction
-            let newIndex = gsap.utils.wrap(0, length, index),
-                time = times[newIndex];
-            if (time > tl.time() !== index > curIndex) { // if we're wrapping the timeline's playhead, make the proper adjustments
-                vars.modifiers = { time: gsap.utils.wrap(0, tl.duration()) };
-                time += tl.duration() * (index > curIndex ? 1 : -1);
-            }
-            curIndex = newIndex;
-            vars.overwrite = true;
-            return tl.tweenTo(time, vars);
-        }
-        tl.next = vars => toIndex(curIndex + 1, vars);
-        tl.previous = vars => toIndex(curIndex - 1, vars);
-        tl.current = () => curIndex;
-        tl.toIndex = (index, vars) => toIndex(index, vars);
-        tl.times = times;
-        if (config.reversed) {
-            tl.vars.onReverseComplete();
-            tl.reverse();
-        }
-        return tl;
-    }
-</script>
+<script src="src/js/running-line.js"></script>
 <!-- Bulma Tabs -->
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const tabButtons = document.querySelectorAll('.tab-button');
-        const tabContents = document.querySelectorAll('.tab-content');
-
-        tabButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const target = button.getAttribute('data-tab');
-
-                tabButtons.forEach(btn => btn.classList.remove('active'));
-                tabContents.forEach(content => content.classList.remove('active'));
-
-                button.classList.add('active');
-                document.getElementById(target).classList.add('active');
-            });
-        });
-    });
-</script>
-
-<script src="http://rdudov.com/js/bulma.js"></script>
+<script src="src/js/tabs.js"></script>
 
 </html>

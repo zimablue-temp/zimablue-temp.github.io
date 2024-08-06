@@ -1,0 +1,54 @@
+/*
+ * The Typekit service used to deliver this font or fonts for use on websites
+ * is provided by Adobe and is subject to these Terms of Use
+ * http://www.adobe.com/products/eulas/tou_typekit. For font license
+ * information, see the list below.
+ *
+ * iki-mono-variable:
+ *   - http://typekit.com/eulas/0000000000000000774f2ed3
+ *   - http://typekit.com/eulas/0000000000000000774f2ed4
+ * instrument-sans-variable:
+ *   - http://typekit.com/eulas/0000000000000000774ed31c
+ *   - http://typekit.com/eulas/0000000000000000774ed31d
+ * scale-variable:
+ *   - http://typekit.com/eulas/000000000000000077542086
+ *
+ * © 2009-2024 Adobe Systems Incorporated. All Rights Reserved.
+ */
+/*{"last_published":"2024-04-23 09:41:20 UTC"}*/
+
+@import url("https://p.typekit.net/p.css?s=1&k=lnu1fpi&ht=tk&f=53156.53157.55312.55313.55609&a=1494256&app=typekit&e=css");
+
+@font-face {
+font-family:"iki-mono-variable";
+src:url("https://use.typekit.net/af/de3991/0000000000000000774f2ed3/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n1&v=3") format("woff2"),url("https://use.typekit.net/af/de3991/0000000000000000774f2ed3/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n1&v=3") format("woff"),url("https://use.typekit.net/af/de3991/0000000000000000774f2ed3/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n1&v=3") format("opentype");
+font-display:auto;font-style:normal;font-weight:100;font-stretch:normal;
+}
+
+@font-face {
+font-family:"iki-mono-variable";
+src:url("https://use.typekit.net/af/51c1d3/0000000000000000774f2ed4/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i1&v=3") format("woff2"),url("https://use.typekit.net/af/51c1d3/0000000000000000774f2ed4/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i1&v=3") format("woff"),url("https://use.typekit.net/af/51c1d3/0000000000000000774f2ed4/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i1&v=3") format("opentype");
+font-display:auto;font-style:italic;font-weight:100;font-stretch:normal;
+}
+
+@font-face {
+font-family:"instrument-sans-variable";
+src:url("https://use.typekit.net/af/e573ad/0000000000000000774ed31c/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"),url("https://use.typekit.net/af/e573ad/0000000000000000774ed31c/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"),url("https://use.typekit.net/af/e573ad/0000000000000000774ed31c/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+font-display:auto;font-style:normal;font-weight:400;font-stretch:normal;
+}
+
+@font-face {
+font-family:"instrument-sans-variable";
+src:url("https://use.typekit.net/af/b2f925/0000000000000000774ed31d/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff2"),url("https://use.typekit.net/af/b2f925/0000000000000000774ed31d/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff"),url("https://use.typekit.net/af/b2f925/0000000000000000774ed31d/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("opentype");
+font-display:auto;font-style:italic;font-weight:400;font-stretch:normal;
+}
+
+@font-face {
+font-family:"scale-variable";
+src:url("https://use.typekit.net/af/64385c/000000000000000077542086/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"),url("https://use.typekit.net/af/64385c/000000000000000077542086/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"),url("https://use.typekit.net/af/64385c/000000000000000077542086/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+font-display:auto;font-style:normal;font-weight:400;font-stretch:normal;
+}
+
+.tk-iki-mono-variable { font-family: "iki-mono-variable",sans-serif; }
+.tk-instrument-sans-variable { font-family: "instrument-sans-variable",sans-serif; }
+.tk-scale-variable { font-family: "scale-variable",sans-serif; }
