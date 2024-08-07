@@ -47,6 +47,7 @@ i {
 	font-optical-sizing: auto;
 	font-weight: 500;
 	font-style: italic;
+	font-size: 105%;
 }
 
 small {
@@ -128,6 +129,10 @@ a.navbar-item:hover {
 	color: #212121;
 }
 
+.cards-service p.title i {
+	font-weight: 600;
+}
+
 .cards-service .subtitle,
 .cards-service .cta {
 	font-size: 20px;
@@ -193,7 +198,7 @@ a.navbar-item:hover {
 }
 
 .stb-item:hover p {
-	color: #4D8FC4!important;
+	color: #4D8FC4 !important;
 }
 
 .stb-item p.title {
@@ -212,8 +217,17 @@ a.navbar-item:hover {
 	text-transform: uppercase;
 }
 
+.hover-image {
+	width: 128px;
+	height: 29px;
+}
+
+.hover-image:hover {
+	content: url('../../src/img/zimablue.svg');
+}
+
 .logo-partners {
-	max-height: 128px;
+	height: 172px;
 	filter: grayscale(100%) contrast(150%);
 	transition: filter 0.3s;
 }
@@ -402,12 +416,12 @@ a.navbar-item:hover {
 	color: #ffffff;
 }
 
-.tag > svg {
+.tag>svg {
 	padding-left: 24px;
 	height: 48px;
 }
 
-.tag:hover > svg path {
+.tag:hover>svg path {
 	fill: #212121;
 	transition: all .5s ease;
 }
@@ -418,4 +432,71 @@ a.ts {
 
 a.ts:hover {
 	color: #4D8FC4;
+}
+
+
+@media (min-width: 0) and (max-width: 767.98px) {
+	.hero-body p {
+		font-size: 10vw;
+		font-weight: 500;
+		line-height: 1.5;
+	}
+
+	.tag {
+		font-size: 10vw;
+		border-radius: 64px;
+	}
+
+	.navbar-burger {
+		color: #212121;
+	}
+
+	.navbar-burger:hover {
+		color: #4D8FC4;
+		background-color: #ffffff;
+	}
+
+	.navbar-menu {
+		background-color: #fff;
+		box-shadow: none;
+	}
+
+	.navbar-link,
+	a.navbar-item {
+		text-align: center;
+	}
+
+	#about p.title {
+		font-size: 10vw;
+	}
+
+	.cards-service {
+		padding: 16px 16px 16px 20px;
+	}
+
+	.tab-content>div {
+		min-height: 520px;
+	}
+
+	.tab-content .cards-service .title {
+		font-size: 7vw;
+	}
+
+	.cards-service p.title {
+		font-size: 9vw;
+	}
+
+	.is-size-3 {
+		font-size: 7vw;
+	}
+
+	.tab-button {
+		font-size: 10vw;
+		margin-right: 2vw;
+	}
+
+	.stb-item p.title {
+		font-size: 12vw;
+		margin-bottom: 8px!important;
+	}
 }
