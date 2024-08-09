@@ -85,8 +85,6 @@ a.navbar-item:hover {
 .jGravity .tag {
 	position: absolute;
 	top: -200px;
-	left: 35%;
-	display: flex;
 }
 
 .title-with-icon {
@@ -120,10 +118,11 @@ a.navbar-item:hover {
 	min-height: 464px;
 	width: 100%;
 	padding: 32px 32px 32px 40px;
+	position: relative;
 }
 
 .cards-service p.title {
-	font-size: 40px;
+	font-size: 32px;
 	font-weight: 500;
 	line-height: 125%;
 	color: #212121;
@@ -134,6 +133,7 @@ a.navbar-item:hover {
 }
 
 .cards-service .subtitle,
+.cards-service .subtitle2,
 .cards-service .cta {
 	font-size: 20px;
 	font-weight: 300;
@@ -154,9 +154,20 @@ a.navbar-item:hover {
 	transition: all .5s ease;
 }
 
-.cards-service:hover p,
-.cards-service:hover li,
+.cards-service a {
+	position: absolute;
+}
+
 .cards-service:hover a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.cards-service:hover p,
+.cards-service:hover li {
 	color: #ffffff;
 	transition: all .5s ease;
 }
@@ -173,6 +184,22 @@ a.navbar-item:hover {
 	display: block;
 	transition: all .5s ease;
 }
+
+#services .cards-service .subtitle2,
+#research .cards-service .subtitle {
+	display: none;
+}
+
+#services .cards-service:hover .subtitle2,
+#research .cards-service:hover .subtitle {
+	display: block;
+}
+
+#services .cards-service:hover .title,
+#research .cards-service:hover p.title {
+	display: none;
+}
+
 
 /* Бегущая строка */
 
@@ -375,8 +402,8 @@ div.bottom-links {
 }
 
 .bottom-links .tag:nth-child(6):hover {
-	background-color: #EAE6E6;
-	color: #212121;
+	background-color: #FE6A0B;
+	color: #ffffff;
 	transition: all .5s ease;
 }
 
@@ -422,7 +449,7 @@ a.navbar-item:hover {
 }
 
 .tag:hover>svg path {
-	fill: #212121;
+	fill: #fff;
 	transition: all .5s ease;
 }
 
@@ -443,7 +470,7 @@ a.ts:hover {
 	}
 
 	.tag {
-		font-size: 10vw;
+		font-size: 24px;
 		border-radius: 64px;
 	}
 
@@ -467,7 +494,7 @@ a.ts:hover {
 	}
 
 	#about p.title {
-		font-size: 10vw;
+		font-size: 9vw;
 	}
 
 	.cards-service {
@@ -479,24 +506,112 @@ a.ts:hover {
 	}
 
 	.tab-content .cards-service .title {
-		font-size: 7vw;
+		font-size: 24px;
 	}
 
 	.cards-service p.title {
-		font-size: 9vw;
+		font-size: 24px;
 	}
 
 	.is-size-3 {
-		font-size: 7vw;
+		font-size: 24px;
 	}
 
 	.tab-button {
-		font-size: 10vw;
+		font-size: 24px;
 		margin-right: 2vw;
+		padding: 16px 24px;
+		border-radius: 32px;
 	}
 
 	.stb-item p.title {
 		font-size: 12vw;
-		margin-bottom: 8px!important;
+		margin-bottom: 8px !important;
 	}
+
+	.bottom-links .tag:nth-child(7) {
+		bottom: 53px;
+	}
+
+	.bottom-links .tag:nth-child(4) {
+		bottom: 106px;
+		right: 160px;
+	}
+
+	.bottom-links .tag:nth-child(2) {
+		bottom: 98px;
+		left: 100px;
+		transform: rotate(-15deg);
+	}
+
+	.bottom-links .tag:nth-child(5) {
+		bottom: 144px;
+		right: -50px;
+	}
+
+	.bottom-links .tag:nth-child(1) {
+		bottom: 231px;
+	}
+
+	.tag>svg {
+		padding-left: 10px;
+		height: 24px;
+	}
+}
+
+@media (min-width: 480px) and (max-width: 767.98px) {
+
+	.tag {
+		font-size: 32px;
+	}
+
+	.bottom-links .tag:nth-child(4) {
+		bottom: 135px;
+		right: 225px;
+	}
+
+	.bottom-links .tag:nth-child(2) {
+		bottom: 76px;
+		left: 71px;
+	}
+
+	.bottom-links .tag:nth-child(7) {
+		bottom: 65px;
+	}
+
+	.bottom-links .tag:nth-child(5) {
+		bottom: 176px;
+	}
+
+	.bottom-links .tag:nth-child(3) {
+		bottom: 150px;
+		left: 137px;
+		transform: rotate(10deg);
+	}
+
+	.bottom-links .tag:nth-child(1) {
+		bottom: 222px;
+	}
+}
+
+/* Modals */
+
+.modal-card-head,
+.modal-card-body,
+.modal-card-foot {
+	background-color: #fafafc;
+	box-shadow: none;
+}
+
+.modal-card-head {
+	justify-content: flex-end;
+	padding: 24px;
+}
+
+.modal-card-body {
+	padding: 0 24px;
+}
+
+.modal-card-foot {
+	padding: 12px;
 }

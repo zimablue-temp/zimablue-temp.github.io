@@ -100,6 +100,7 @@ var canvas, worldAABB, world, mouseJoint;
                                 var element = elements[i];
                                 element.style.position = 'absolute';
                                 element.style.left = properties[i][0] + 'px';
+                                // element.style.left = Math.random() * (window.innerWidth - properties[i][2]) + 'px';
                                 element.style.top = properties[i][1] + 'px';
 
                                 element.onmousedown = onElementMouseDown;
