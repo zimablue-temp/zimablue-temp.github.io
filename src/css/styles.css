@@ -165,6 +165,11 @@ a.navbar-item:hover {
 	display: none;
 }
 
+.colorful {
+	background-color: #4D8FC4!important;
+	color: #ffffff!important;
+}
+
 /* #footer {
 	margin-bottom: 52px;
 } */
@@ -188,11 +193,6 @@ a.navbar-item:hover {
 	background-color: #ffffff !important;
 	color: #4D8FC4 !important;
 	transition: all .5s ease;
-}
-
-.colorful {
-	background-color: #4D8FC4;
-	color: #ffffff;
 }
 
 .tag>svg {
