@@ -14,7 +14,6 @@
 </head>
 
 <body>
-
     <section class="hero is-white is-fullheight" id="#">
         <div class="hero-head">
             <nav class="navbar">
@@ -75,7 +74,9 @@
                     </div>
                     <div data-effect-4>
                         <p class="title">
-                            Наша миссия заключается в&nbsp;поисках истинных причин. Даже когда у&nbsp;нас есть гениальные гипотезы (а&nbsp;мы&nbsp;все свои гипотезы считаем гениальными), мы&nbsp;всегда их&nbsp;проверяем.
+                            Наша миссия заключается в&nbsp;поисках истинных причин. Даже когда у&nbsp;нас есть
+                            гениальные гипотезы (а&nbsp;мы&nbsp;все свои гипотезы считаем гениальными), мы&nbsp;всегда
+                            их&nbsp;проверяем.
                         </p>
                     </div>
                 </div>
@@ -89,96 +90,30 @@
                 <p>Наши услуги</p>
             </div>
             <div class="columns">
-
-                <div class="card">
-                    <div class="card-inner">
-                      <div class="card-front">
-                        Содержимое лицевой стороны карточки
-                      </div>
-                      <div class="card-back">
-                        Содержимое обратной стороны карточки
-                      </div>
-                    </div>
-                    <button class="flip-icon">↻</button>
-                  </div>
-<style>
-    /* Общие стили для карточек */
-.card {
-  position: relative;
-  width: 300px;
-  height: 200px;
-  perspective: 1000px;
-}
-
-.card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-}
-
-/* Стили для лицевой и обратной стороны карточки */
-.card-front, .card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-}
-
-.card-front {
-  background: #fff;
-}
-
-.card-back {
-  background: #eee;
-  transform: rotateY(180deg);
-}
-
-/* Hover эффект для не-touch устройств */
-@media (hover: hover) and (pointer: fine) {
-  .card:hover .card-inner {
-    transform: rotateY(180deg);
-  }
-
-  .flip-icon {
-    display: none;
-  }
-}
-
-/* Стили для touch устройств */
-@media (hover: none) and (pointer: coarse) {
-  .flip-icon {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-  }
-}
-
-</style>
-                  
                 <div class="column">
                     <div
-                        class="cards-service is-clickable is-flex is-flex-direction-column is-justify-content-space-between">
-                        <p class="title">
-                            <i>Качественные</i> исследования
-                        </p>
-                        <p class="subtitle">
-                            фокус-группы, offline 1-to-1 опросы, UX/UI исследования, анализ
-                            аудитории, конкурентный анализ, mystery shopping
-                        </p>
-                        <p class="subtitle2">
-                            Данные исследования предоставят полное понимание опыта, мнений и&nbsp;представлений текущих
-                            и&nbsp;потенциальных клиентов
-                        </p>
-                        <a href="https://t.me/FarangizaShukasheva?start=Здравствуйте, хочу заказать исследование"
-                            target="_blank"></a>
-                        <p class="cta">Заказать исследование</p>
-                        <button class="delete" aria-label="close"></button>
+                        class="flip-card cards-service">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front is-flex is-flex-direction-column is-justify-content-space-between">
+                                <p class="title">
+                                    <i>Качественные</i> исследования
+                                </p>
+                                <p class="subtitle">
+                                    фокус-группы, offline 1-to-1 опросы, UX/UI исследования, анализ
+                                    аудитории, конкурентный анализ, mystery shopping
+                                </p>
+                            </div>
+                            <div class="flip-card-back is-flex is-flex-direction-column is-justify-content-space-between">
+                                <p class="subtitle2">
+                                    Данные исследования предоставят полное понимание опыта, мнений и&nbsp;представлений
+                                    текущих
+                                    и&nbsp;потенциальных клиентов
+                                </p>
+                                <p class="cta"><a href="https://t.me/FarangizaShukasheva?start=Здравствуйте, хочу заказать исследование"
+                                    target="_blank">Заказать исследование</a></p>
+                            </div>
+                        </div>
+                        <button class="flip-icon">↻</button>
                     </div>
                 </div>
                 <div class="column">
@@ -691,7 +626,17 @@
             </footer>
         </div>
     </div>
-
+<!-- <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            Содержимое лицевой стороны карточки
+                        </div>
+                        <div class="flip-card-back">
+                            Содержимое обратной стороны карточки
+                        </div>
+                    </div>
+                    <button class="flip-icon">↻</button>
+                </div> -->
 </body>
 
 <!-- Javascript -->
@@ -748,14 +693,15 @@
     });
 
 </script>
-
+<!-- Flip Cards -->
 <script>
     document.querySelectorAll('.flip-icon').forEach(icon => {
-  icon.addEventListener('click', function() {
-    const cardInner = this.previousElementSibling;
-    cardInner.style.transform = cardInner.style.transform === 'rotateY(180deg)' ? '' : 'rotateY(180deg)';
-  });
-});
+        icon.addEventListener('click', function () {
+            const cardInner = this.previousElementSibling;
+            cardInner.style.transform = cardInner.style.transform === 'rotateY(180deg)' ? '' : 'rotateY(180deg)';
+        });
+    });
 
 </script>
+
 </html>
