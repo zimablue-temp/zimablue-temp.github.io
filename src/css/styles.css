@@ -136,8 +136,8 @@ a.navbar-item:hover {
 	height: 100%;
 }
 
-.cards-service:hover .cta > a,
-.cta > a {
+.cards-service:hover .cta>a,
+.cta>a {
 	position: relative;
 	color: #ffffff;
 }
@@ -445,6 +445,11 @@ a.navbar-item {
 	min-height: 464px;
 }
 
+.tab-content .flip-card-front,
+.tab-content .flip-card-back {
+	min-height: 400px;
+}
+
 .tab-content.active {
 	display: block;
 }
@@ -544,6 +549,12 @@ div.bottom-links {
 	.tab-content>div {
 		min-height: 520px;
 	}
+
+	.tab-content .flip-card-front,
+	.tab-content .flip-card-back {
+		min-height: 456px;
+	}
+
 
 	.tab-content .cards-service .title {
 		font-size: 1.4em;
@@ -769,12 +780,12 @@ div.bottom-links {
 		font-size: 48px;
 	}
 
-	.cards-service  {
+	.cards-service {
 		min-height: 240px;
 	}
 
 	.flip-card-front,
-	.flip-card-back  {
+	.flip-card-back {
 		min-height: 176px;
 	}
 
@@ -784,6 +795,11 @@ div.bottom-links {
 
 	.tab-content>div {
 		min-height: 240px;
+	}
+
+	.tab-content .flip-card-front,
+	.tab-content .flip-card-back {
+		min-height: 176px;
 	}
 
 	.bottom-links .tag {
@@ -824,6 +840,10 @@ div.bottom-links {
 		bottom: 0;
 		right: 0;
 	}
+
+	.flip-card .button {
+		width: 50%;
+	}
 }
 
 @media (min-width: 1022px) {
@@ -834,7 +854,7 @@ div.bottom-links {
 	.cards-service {
 		min-height: 560px;
 	}
-	
+
 	.flip-card-front,
 	.flip-card-back {
 		min-height: 496px;
@@ -847,6 +867,12 @@ div.bottom-links {
 	.tab-content>div {
 		min-height: 360px;
 	}
+
+	.tab-content .flip-card-front,
+	.tab-content .flip-card-back {
+		min-height: 296px;
+	}
+
 
 	.bottom-links .tag {
 		font-size: 2.4em;
@@ -902,7 +928,7 @@ div.bottom-links {
 	.cards-service {
 		min-height: 464px;
 	}
-	
+
 	.flip-card-front,
 	.flip-card-back {
 		min-height: 400px;
@@ -1016,4 +1042,17 @@ div.bottom-links {
 		font-size: 24px;
 		cursor: pointer;
 	}
+}
+
+.flip-card .button {
+	text-transform: uppercase;
+	font-weight: 400;
+	border-radius: 16px;
+	border: 1px solid;
+	padding: 10px;
+	opacity: .8;
+}
+
+.flip-card .button:hover {
+	opacity: 1;
 }
