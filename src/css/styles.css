@@ -841,7 +841,7 @@ div.bottom-links {
 		right: 0;
 	}
 
-	.flip-card .button {
+	.is-three-quarters .flip-card .button {
 		width: 50%;
 	}
 }
