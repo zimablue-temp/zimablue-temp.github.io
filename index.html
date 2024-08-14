@@ -877,8 +877,13 @@
 </script>
 <!-- Button Toggle -->
 <script>
-    function toggleIcon(button) {
-        button.classList.toggle('active');
+    function toggleCard(button) {
+        const flipCard = button.closest('.flip-card');
+        flipCard.classList.toggle('active');
+
+        if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) {
+            flipCard.classList.remove('hover');
+        }
     }
 </script>
 
