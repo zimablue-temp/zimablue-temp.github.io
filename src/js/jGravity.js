@@ -4,7 +4,7 @@
 
             var settings = {
                 target: 'div, span, img, ol, ul, li, a, blockquote, button, input, embed, h1, h2, h3, h4, h5, h6, label, object, option, p, pre, span, table',
-                ignoreClass: '',
+                ignoreClass: 'ignoreMe',
                 weight: 20,
                 depth: 1,
                 drag: true,

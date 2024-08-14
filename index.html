@@ -115,7 +115,9 @@
                                     target="_blank">Заказать исследование</button>
                             </div>
                         </div>
-                        <button class="flip-icon">↻</button>
+                        <button class="flip-icon" onclick="toggleIcon(this)">
+                            <span class="icon ignoreMe"></span>
+                        </button>
                     </div>
                 </div>
                 <div class="column">
@@ -141,7 +143,9 @@
                                     target="_blank">Заказать исследование</button>
                             </div>
                         </div>
-                        <button class="flip-icon">↻</button>
+                        <button class="flip-icon" onclick="toggleIcon(this)">
+                            <span class="icon ignoreMe"></span>
+                        </button>
                     </div>
                 </div>
                 <div class="column">
@@ -169,7 +173,9 @@
                                     target="_blank">Заказать исследование</button>
                             </div>
                         </div>
-                        <button class="flip-icon">↻</button>
+                        <button class="flip-icon" onclick="toggleIcon(this)">
+                            <span class="icon ignoreMe"></span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -251,7 +257,9 @@
                                     target="_blank">Скачать исследование</button>
                             </div>
                         </div>
-                        <button class="flip-icon">↻</button>
+                        <button class="flip-icon" onclick="toggleIcon(this)">
+                            <span class="icon ignoreMe"></span>
+                        </button>
                     </div>
                 </div>
                 <div class="column">
@@ -276,7 +284,9 @@
                                     target="_blank">Скачать исследование</button>
                             </div>
                         </div>
-                        <button class="flip-icon">↻</button>
+                        <button class="flip-icon" onclick="toggleIcon(this)">
+                            <span class="icon ignoreMe"></span>
+                        </button>
                     </div>
                 </div>
                 <div class="column">
@@ -301,7 +311,9 @@
                                     target="_blank">Скачать исследование</button>
                             </div>
                         </div>
-                        <button class="flip-icon">↻</button>
+                        <button class="flip-icon" onclick="toggleIcon(this)">
+                            <span class="icon ignoreMe"></span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -327,7 +339,9 @@
                                     target="_blank">Скачать исследование</button>
                             </div>
                         </div>
-                        <button class="flip-icon">↻</button>
+                        <button class="flip-icon" onclick="toggleIcon(this)">
+                            <span class="icon ignoreMe"></span>
+                        </button>
                     </div>
                 </div>
                 <div class="column">
@@ -351,19 +365,21 @@
                                     target="_blank">Скачать исследование</button>
                             </div>
                         </div>
-                        <button class="flip-icon">↻</button>
+                        <button class="flip-icon" onclick="toggleIcon(this)">
+                            <span class="icon ignoreMe"></span>
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="section has-background-white is-medium" id="feedback">
+    <section class="section has-background-white is-medium pb-0" id="feedback">
         <div class="container">
             <div class="title-with-icon">
                 <img src="src/img/icons/icon-arrow-left.svg">
                 <p>Рекомендательные письма</p>
             </div>
-            <div class="tabs">
+            <div class="tabs is-hidden-mobile">
                 <button class="tab-button active" data-tab="tab1">Tele2</button>
                 <button class="tab-button" data-tab="tab2">AlmaU</button>
                 <button class="tab-button" data-tab="tab3">Alpha</button>
@@ -372,6 +388,21 @@
                 <button class="tab-button" data-tab="tab6">American Councils</button>
                 <button class="tab-button" data-tab="tab7">British Councils</button>
             </div>
+        </div>
+    </section>
+    <section class="has-background-white is-hidden-tablet">
+        <div class="tabs" style="padding: 0 24px;">
+            <button class="tab-button active" data-tab="tab1">Tele2</button>
+            <button class="tab-button" data-tab="tab2">AlmaU</button>
+            <button class="tab-button" data-tab="tab3">Alpha</button>
+            <button class="tab-button" data-tab="tab4">Jusan</button>
+            <button class="tab-button" data-tab="tab5">Фонд Татишева</button>
+            <button class="tab-button" data-tab="tab6">American Councils</button>
+            <button class="tab-button" data-tab="tab7">British Councils</button>
+        </div>
+    </section>
+    <section class="section has-background-white is-medium pt-6">
+        <div class="container">
             <div class="columns">
                 <div class="column is-three-quarters">
                     <div class="tab-content active" id="tab1">
@@ -397,7 +428,9 @@
                                         class="open-modal-btn">Читать полностью</button>
                                 </div>
                             </div>
-                            <button class="flip-icon">↻</button>
+                            <button class="flip-icon" onclick="toggleIcon(this)">
+                                <span class="icon ignoreMe"></span>
+                            </button>
                         </div>
                     </div>
                     <div class="tab-content" id="tab2">
@@ -423,7 +456,9 @@
                                         class="open-modal-btn">Читать полностью</button>
                                 </div>
                             </div>
-                            <button class="flip-icon">↻</button>
+                            <button class="flip-icon" onclick="toggleIcon(this)">
+                                <span class="icon ignoreMe"></span>
+                            </button>
                         </div>
                     </div>
                     <div class="tab-content" id="tab3">
@@ -449,7 +484,9 @@
                                         data-target="modal-id-alphauz" class="open-modal-btn">Читать полностью</button>
                                 </div>
                             </div>
-                            <button class="flip-icon">↻</button>
+                            <button class="flip-icon" onclick="toggleIcon(this)">
+                                <span class="icon ignoreMe"></span>
+                            </button>
                         </div>
                     </div>
                     <div class="tab-content" id="tab4">
@@ -475,7 +512,9 @@
                                         class="open-modal-btn">Читать полностью</button>
                                 </div>
                             </div>
-                            <button class="flip-icon">↻</button>
+                            <button class="flip-icon" onclick="toggleIcon(this)">
+                                <span class="icon ignoreMe"></span>
+                            </button>
                         </div>
                     </div>
                     <div class="tab-content" id="tab5">
@@ -502,7 +541,9 @@
                                         class="open-modal-btn">Читать полностью</button>
                                 </div>
                             </div>
-                            <button class="flip-icon">↻</button>
+                            <button class="flip-icon" onclick="toggleIcon(this)">
+                                <span class="icon ignoreMe"></span>
+                            </button>
                         </div>
                     </div>
                     <div class="tab-content" id="tab6">
@@ -527,7 +568,9 @@
                                         class="open-modal-btn">Читать полностью</button>
                                 </div>
                             </div>
-                            <button class="flip-icon">↻</button>
+                            <button class="flip-icon" onclick="toggleIcon(this)">
+                                <span class="icon ignoreMe"></span>
+                            </button>
                         </div>
                     </div>
                     <div class="tab-content" id="tab7">
@@ -554,7 +597,9 @@
                                         class="open-modal-btn">Читать полностью</button>
                                 </div>
                             </div>
-                            <button class="flip-icon">↻</button>
+                            <button class="flip-icon" onclick="toggleIcon(this)">
+                                <span class="icon ignoreMe"></span>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -825,6 +870,12 @@
         });
     });
 
+</script>
+<!-- Button Toggle -->
+<script>
+    function toggleIcon(button) {
+        button.classList.toggle('active');
+    }
 </script>
 
 </html>

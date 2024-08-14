@@ -80,7 +80,7 @@ a.navbar-item:hover {
 	color: #212121;
 	border-radius: 32px;
 	border: 1px solid #212121;
-	min-height: 464px;
+	min-height: 512px;
 	width: 100%;
 	padding: 32px 32px 32px 40px;
 	position: relative;
@@ -442,7 +442,7 @@ a.navbar-item {
 }
 
 .tab-content>div {
-	min-height: 464px;
+	min-height: 512px;
 }
 
 .tab-content .flip-card-front,
@@ -523,6 +523,10 @@ div.bottom-links {
 	transform: rotate(0deg);
 }
 
+.is-three-quarters .flip-card .button {
+	width: 100%;
+}
+
 
 
 @media (min-width: 0) and (max-width: 1022px) {
@@ -547,7 +551,7 @@ div.bottom-links {
 	}
 
 	.tab-content>div {
-		min-height: 520px;
+		min-height: 568px;
 	}
 
 	.tab-content .flip-card-front,
@@ -1033,15 +1037,56 @@ div.bottom-links {
 }
 
 @media (hover: none) and (pointer: coarse) {
+
+	.cards-service:hover {
+		pointer-events: none;
+	  }
+
 	.flip-icon {
 		position: absolute;
-		bottom: 10px;
-		right: 10px;
-		background: none;
-		border: none;
-		font-size: 24px;
+		bottom: 24px;
+		right: 24px;
+		background-color: #212121;
+		width: 36px;
+		height: 36px;
+		border-radius: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		cursor: pointer;
+		z-index: 2;
 	}
+
+	.icon {
+		transform: rotate(0deg);
+		transition: transform 0.3s ease;
+		width: 20px;
+	}
+
+	.icon::before,
+	.icon::after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		background-color: white;
+		transition: transform 0.3s ease;
+	}
+
+	.icon::before {
+		transform: translateY(-50%);
+	}
+
+	.icon::after {
+		transform: translateY(-50%) rotate(90deg);
+	}
+
+	.flip-icon.active .icon {
+		transform: rotate(45deg);
+	}
+
 }
 
 .flip-card .button {
