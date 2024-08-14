@@ -1038,9 +1038,9 @@ div.bottom-links {
 
 @media (hover: none) and (pointer: coarse) {
 
-	.cards-service:hover {
+	/* .cards-service:hover {
 		pointer-events: none;
-	  }
+	  } */
 
 	.flip-icon {
 		position: absolute;
