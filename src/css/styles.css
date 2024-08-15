@@ -75,17 +75,6 @@ a.navbar-item:hover {
 	color: #212121;
 }
 
-/* .cards-service {
-	background-color: #ffffff;
-	color: #212121;
-	border-radius: 32px;
-	border: 1px solid #212121;
-	min-height: 512px;
-	width: 100%;
-	padding: 32px 32px 32px 40px;
-	position: relative;
-} */
-
 .flip-card-front,
 .flip-card-back {
 	min-height: 400px;
@@ -102,6 +91,24 @@ a.navbar-item:hover {
 	font-weight: 600;
 }
 
+.tab-content .cards-service {
+	border: 1px solid #4D8FC4;
+	border-radius: 32px;
+	padding: 32px 32px 32px 40px;
+	position: relative;
+	background-color: #ffffff;
+	color: #212121;
+	width: 100%;
+}
+
+.tab-content .cards-service p.title {
+	color: #08c;
+	}
+
+.tab-content .cards-service>div {
+	min-height: 280px;
+}
+
 .cards-service .subtitle,
 .cards-service .subtitle2,
 .cards-service .cta {
@@ -114,29 +121,29 @@ a.navbar-item:hover {
 	margin-bottom: 0;
 }
 
-.cards-service .subtitle:hover {
+/* .cards-service .subtitle:hover {
 	display: none;
-}
+} */
 
-.cards-service:hover .cta>a,
+/* .cards-service:hover .cta>a,
 .cta>a {
 	position: relative;
 	color: #ffffff;
-}
+} */
 
-.cards-service:hover p,
+/* .cards-service:hover p,
 .cards-service:hover li {
 	color: #ffffff;
 	transition: all .5s ease;
-}
+} */
 
 .cards-service .cta {
 	display: none;
 }
 
-.cards-service:hover .subtitle {
+/* .cards-service:hover .subtitle {
 	display: none;
-}
+} */
 
 .cards-service:hover .cta {
 	display: block;
@@ -509,8 +516,6 @@ div.bottom-links {
 	width: 100%;
 }
 
-
-
 @media (min-width: 0) and (max-width: 1022px) {
 
 	.hero-body p {
@@ -609,6 +614,10 @@ div.bottom-links {
 		bottom: 14vw;
 		right: -5vw;
 	}
+
+	.tab-content .cards-service>div {
+		min-height: 460px;
+		}
 }
 
 @media (min-width: 318px) {
@@ -830,6 +839,14 @@ div.bottom-links {
 	.is-three-quarters .flip-card .button {
 		width: 50%;
 	}
+	
+	.tab-content .cards-service>div {
+		min-height: 320px;
+		}
+	
+		.tab-content .cards-service {
+		min-height: 440px;
+		}
 }
 
 @media (min-width: 1022px) {
@@ -1031,10 +1048,6 @@ div.bottom-links {
 
 @media (hover: none) and (pointer: coarse) {
 
-	*:root {
-		pointer-events: none;
-	}
-
 	.flip-icon {
 		position: absolute;
 		bottom: 24px;
@@ -1099,16 +1112,19 @@ div.bottom-links {
 	position: absolute;
 	bottom: 24px;
 	right: 24px;
-	background-color: #212121;
 	width: 36px;
 	height: 36px;
+	background-color: #4D8FC4;
+	color: #ffffff;
 	border-radius: 50%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
 	cursor: pointer;
 	z-index: 2;
+}
+
+.feedback .icon {
 	font-size: 24px;
-	line-height: 100%;
-	color: #ffffff;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-bottom: 3px;
 }
