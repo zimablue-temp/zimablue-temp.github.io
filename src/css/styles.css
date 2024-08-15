@@ -136,34 +136,34 @@ a.navbar-item:hover {
 	color: #ffffff;
 	transition: all .5s ease;
 } */
-
+/* 
 .cards-service .cta {
 	display: none;
-}
+} */
 
 /* .cards-service:hover .subtitle {
 	display: none;
 } */
-
+/* 
 .cards-service:hover .cta {
 	display: block;
 	transition: all .5s ease;
-}
+} */
 
-#services .cards-service .subtitle2,
+/* #services .cards-service .subtitle2,
 #research .cards-service .subtitle {
 	display: none;
-}
+} */
 
-#services .cards-service:hover .subtitle2,
+/* #services .cards-service:hover .subtitle2,
 #research .cards-service:hover .subtitle {
 	display: block;
-}
+} */
 
-#services .cards-service:hover .title,
+/* #services .cards-service:hover .title,
 #research .cards-service:hover p.title {
 	display: none;
-}
+} */
 
 .colorful {
 	background-color: #4D8FC4 !important;
