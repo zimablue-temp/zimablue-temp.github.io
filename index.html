@@ -102,6 +102,7 @@
                                     фокус-группы, offline 1-to-1 опросы, UX/UI исследования, анализ
                                     аудитории, конкурентный анализ, mystery shopping
                                 </p>
+                                <p class="is-hidden-tablet"></p>
                             </div>
                             <div
                                 class="flip-card-back is-flex is-flex-direction-column is-justify-content-space-between">
@@ -113,6 +114,7 @@
                                 <a class="button is-white is-outlined is-rounded"
                                     href="https://t.me/FarangizaShukasheva?start=Здравствуйте, хочу заказать исследование"
                                     target="_blank">Заказать исследование</a>
+                                    <p class="is-hidden-tablet"></p>
                             </div>
                         </div>
                         <button class="flip-icon" onclick="toggleIcon(this)">
@@ -131,6 +133,7 @@
                                 <p class="subtitle">
                                     Ad&nbsp;tracking, Brand Health Tracking online
                                 </p>
+                                <p class="is-hidden-tablet"></p>
                             </div>
                             <div
                                 class="flip-card-back is-flex is-flex-direction-column is-justify-content-space-between">
@@ -141,6 +144,7 @@
                                 <a class="button is-white is-outlined is-rounded"
                                     href="https://t.me/FarangizaShukasheva?start=Здравствуйте, хочу заказать исследование"
                                     target="_blank">Заказать исследование</a>
+                                    <p class="is-hidden-tablet"></p>
                             </div>
                         </div>
                         <button class="flip-icon" onclick="toggleIcon(this)">
@@ -161,6 +165,7 @@
                                     и&nbsp;аудитории, Анализ продуктовых и&nbsp;маркетинговых активностей,
                                     Sensitivity to&nbsp;pricing
                                 </p>
+                                <p class="is-hidden-tablet"></p>
                             </div>
                             <div
                                 class="flip-card-back is-flex is-flex-direction-column is-justify-content-space-between">
@@ -171,6 +176,7 @@
                                 <a class="button is-white is-outlined is-rounded"
                                     href="https://t.me/FarangizaShukasheva?start=Здравствуйте, хочу заказать исследование"
                                     target="_blank">Заказать исследование</a>
+                                    <p class="is-hidden-tablet"></p>
                             </div>
                         </div>
                         <button class="flip-icon" onclick="toggleIcon(this)">
@@ -259,6 +265,7 @@
                                 <a class="button is-white is-outlined is-rounded"
                                     href="https://drive.google.com/file/d/1IMOwVtlZxT2k97EwSGhIp5JKKlstMzDi/view"
                                     target="_blank">Скачать исследование</a>
+                                    <p class="is-hidden-tablet"></p>
                             </div>
                         </div>
                         <button class="flip-icon" onclick="toggleIcon(this)">
@@ -286,6 +293,7 @@
                                 <a class="button is-white is-outlined is-rounded"
                                     href="https://drive.google.com/file/d/1E1ZcD_n2uKBhiqBezTU05gEbQlNpXNJk/view"
                                     target="_blank">Скачать исследование</a>
+                                    <p class="is-hidden-tablet"></p>
                             </div>
                         </div>
                         <button class="flip-icon" onclick="toggleIcon(this)">
@@ -313,6 +321,7 @@
                                 <a class="button is-white is-outlined is-rounded"
                                     href="https://drive.google.com/file/d/1KTiYfIITLTVd-niElvJmANgxosF56pCT/view"
                                     target="_blank">Скачать исследование</a>
+                                    <p class="is-hidden-tablet"></p>
                             </div>
                         </div>
                         <button class="flip-icon" onclick="toggleIcon(this)">
@@ -341,6 +350,7 @@
                                 <a class="button is-white is-outlined is-rounded"
                                     href="https://drive.google.com/file/d/1XLH2M8siL9mjjlCgyAHlsvjm7ajfBpu5/view"
                                     target="_blank">Скачать исследование</a>
+                                    <p class="is-hidden-tablet"></p>
                             </div>
                         </div>
                         <button class="flip-icon" onclick="toggleIcon(this)">
@@ -367,6 +377,7 @@
                                 <a class="button is-white is-outlined is-rounded"
                                     href="https://drive.google.com/file/d/1kcNDinL1lr5RueZKKWmKS41pSVjuydLu/view"
                                     target="_blank">Скачать исследование</a>
+                                    <p class="is-hidden-tablet"></p>
                             </div>
                         </div>
                         <button class="flip-icon" onclick="toggleIcon(this)">
@@ -813,13 +824,8 @@
 </script>
 <!-- Button Toggle -->
 <script>
-    function toggleCard(button) {
-        const flipCard = button.closest('.flip-card');
-        flipCard.classList.toggle('active');
-
-        if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) {
-            flipCard.classList.remove('hover');
-        }
+    function toggleIcon(button) {
+        button.classList.toggle('active');
     }
 </script>
 

@@ -1048,6 +1048,7 @@ div.bottom-links {
 
 @media (hover: none) and (pointer: coarse) {
 
+
 	.flip-icon {
 		position: absolute;
 		bottom: 24px;
@@ -1094,7 +1095,6 @@ div.bottom-links {
 	}
 
 }
-
 .flip-card .button {
 	text-transform: uppercase;
 	font-weight: 400;
