@@ -118,12 +118,6 @@ a.navbar-item:hover {
 	display: none;
 }
 
-/* .cards-service:hover {
-	background-color: #4D8FC4;
-	border: 1px solid #4D8FC4;
-	transition: all .5s ease;
-} */
-
 .cards-service:hover .cta>a,
 .cta>a {
 	position: relative;
@@ -1036,6 +1030,10 @@ div.bottom-links {
 }
 
 @media (hover: none) and (pointer: coarse) {
+
+	*:root {
+		pointer-events: none;
+	}
 
 	.flip-icon {
 		position: absolute;
