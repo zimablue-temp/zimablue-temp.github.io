@@ -342,7 +342,7 @@ a.navbar-item {
 }
 
 .logo-partners {
-	height: 172px;
+	height: 72px;
 	filter: grayscale(100%) contrast(150%);
 	transition: filter 0.3s;
 }
@@ -569,6 +569,15 @@ div.bottom-links {
 		padding: 16px 24px;
 		border-radius: 32px;
 	}
+
+	.stb-item {
+		margin-right: 5rem;
+	}
+
+	.logo-partners {
+		height: 48px;
+	}
+	
 
 	.stb-item p.title {
 		font-size: 12vw;
