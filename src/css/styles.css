@@ -1137,3 +1137,146 @@ div.bottom-links {
 	justify-content: center;
 	padding-bottom: 3px;
 }
+
+.wrap {
+	max-width: 100%;
+	margin: auto;
+}
+
+.items-wrap {
+	position: relative;
+	display: flex;
+	overflow: hidden;
+	user-select: none;
+	gap: 64px;
+}
+
+.items-wrap:nth-child(2) {
+	margin-top: 64px;
+}
+
+.items-wrap:before,
+.items-wrap:after {
+	content: "";
+	height: 100%;
+	top: 0;
+	width: 10%;
+	position: absolute;
+	z-index: 1;
+	pointer-events: none;
+}
+
+.items-wrap:before {
+	left: 0;
+	background: linear-gradient(90deg,
+			rgba(255, 255, 255, 1) 0%,
+			rgba(255, 255, 255, 0) 100%);
+}
+
+.items-wrap:after {
+	right: 0;
+	background: linear-gradient(90deg,
+			rgba(255, 255, 255, 0) 0%,
+			rgba(255, 255, 255, 1) 100%);
+}
+
+.items {
+	flex-shrink: 0;
+	display: flex;
+	gap: 64px;
+	justify-content: space-around;
+	min-width: 100%;
+}
+
+.item {
+	background: no-repeat fixed center;
+	background-size: contain;
+	filter: grayscale(1);
+	flex: 1;
+	width: 200px;
+	height: 75px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: all 0.1s ease-in-out;
+}
+
+.item:nth-child(1) {
+	background-image: url("../img/partners/airastana.svg");
+}
+
+.item:nth-child(2) {
+	background-image: url("../img/partners/bigroup.svg");
+}
+
+.item:nth-child(3) {
+	background-image: url("../img/partners/glovo.svg");
+}
+
+.item:nth-child(4) {
+	background-image: url("../img/partners/homecreditbank.svg");
+}
+
+.item:nth-child(5) {
+	background-image: url("../img/partners/jusan.svg");
+}
+
+.item:nth-child(6) {
+	background-image: url("../img/partners/olx.svg");
+}
+
+.item:nth-child(7) {
+	background-image: url("../img/partners/acca.svg");
+}
+
+.item:nth-child(8) {
+	background-image: url("../img/partners/tele2.svg");
+}
+
+.item:nth-child(9) {
+	background-image: url("../img/partners/1fit.svg");
+}
+
+.item:nth-child(10) {
+	background-image: url("../img/partners/yandexgo.svg");
+}
+
+.item:nth-child(11) {
+	background-image: url("../img/partners/acouncil.svg");
+}
+
+.item:nth-child(12) {
+	background-image: url("../img/partners/isos.svg");
+}
+
+.item:nth-child(12) {
+	background-image: url("../img/partners/kazchem.svg");
+}
+
+.item:hover {
+	transform: scale(1.05);
+	filter: grayscale(0);
+	cursor: pointer;
+}
+
+.marquee {
+	animation: scroll 60s linear infinite;
+}
+
+.reverce {
+	animation-direction: reverse;
+}
+
+.items-wrap:hover .marquee {
+	animation-play-state: paused;
+}
+
+@keyframes scroll {
+	from {
+		transform: translateX(0);
+	}
+
+	to {
+		transform: translateX(calc(-100% - 64px));
+	}
+}
