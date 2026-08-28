@@ -140,15 +140,15 @@ footer:
 ```
 
 ### `about.yml` — «О нас»
-`eyebrow` (string, «О нас»), `body` (markdown-инлайн, допускает курсив).
+`eyebrow` (string, «О нас»), `body` (text, raw inline HTML — `<i>` для акцента).
 
 ### `services.yml` — «Услуги»
 `eyebrow` (string), `cards` (list):
 `{ title, front_text, back_text, cta_label, cta_href }` —
-`title`/`front_text`/`back_text` markdown-инлайн, `cta_*` string.
+`title`/`front_text`/`back_text` — text (raw inline HTML), `cta_*` — string.
 
 ### `benefits.yml` — «Преимущества»
-`eyebrow` (string), `body` (markdown-инлайн). В разметку выводится дважды —
+`eyebrow` (string), `body` (text, raw inline HTML). В разметку выводится дважды —
 desktop (`is-size-3 is-hidden-mobile`) и mobile (`is-size-4 is-hidden-tablet`) —
 из одного значения, шаблоном.
 
@@ -167,7 +167,7 @@ desktop (`is-size-3 is-hidden-mobile`) и mobile (`is-size-4 is-hidden-tablet`) 
 ### `feedback.yml` — «Рекомендательные письма»
 `items` (list): `{ tab_label, quote, author, letter_image }`.
 - `tab_label` — string (подпись вкладки, напр. «Tele2»)
-- `quote` — markdown-инлайн (текст письма-цитаты, `.title`)
+- `quote` — text, raw inline HTML (текст письма-цитаты, `.title`)
 - `author` — text многострочный, `\n` → `<br>` при рендере
 - `letter_image` — image, `media_folder` переопределён на `src/docs`
 - Шаблон генерирует: desktop-вкладки, mobile-вкладки, `.tab-content#tabN`,
@@ -242,19 +242,27 @@ GitHub → Settings → Developer settings → OAuth Apps → New:
 
 В контенте повсюду `<i>…</i>` (акцент), `<br>`, `&nbsp;`, `&mdash;`, `&laquo;`/`&raquo;`.
 
+**Решение (уточнено при написании плана): raw inline HTML во всех текстовых
+полях, вывод через `| safe`, без markdown-виджетов и без фильтра `md`.**
+Обоснование: значение поля = точная копия текущего inner HTML секции, поэтому
+пофазная сверка «до/после» остаётся побайтной на всём протяжении портирования;
+не появляется второго представления контента и связанного с конверсией класса
+багов. Текущий контент уже содержит `<i>`/`<br>`/`&nbsp;`, поэтому редактору
+при правках достаточно копировать существующий паттерн.
+
 | Поле | Виджет Decap | Рендер |
 |---|---|---|
-| Абзацы прозы: `about.body`, `benefits.body`, `services.cards.*.{title,front_text,back_text}`, `research.cards.*.{title,back_text}`, `feedback.items.*.quote` | `markdown`, тулбар урезан до курсива и переноса строки | инлайн-фильтр `md`: рендер без обёртки `<p>`, `*слово*` → `<i>слово</i>` |
-| `feedback.items.*.author` | `text` (многострочный) | `\n` → `<br>` |
-| Мелкие: `*.eyebrow`, `nav.*.label`, `cta.label`, `hero.line1`, `hero.line2_em`, `stats.items.*.value`, `*.cta_label`, `*.cta_href`, `*.href` | `string` | через `| safe`; редактор при необходимости вписывает `<i>`/`<small>` вручную |
+| Абзацы прозы: `about.body`, `benefits.body`, `services.cards.*.{title,front_text,back_text}`, `research.cards.*.{title,back_text}`, `feedback.items.*.quote` | `text` (многострочный) | `| safe` |
+| `feedback.items.*.author` | `text` (многострочный) | `| safe` (значение хранит `<br>` как есть) |
+| Мелкие: `*.eyebrow`, `nav.*.label`, `cta.label`, `hero.line1`, `hero.line2_em`, `stats.items.*.value`, `*.cta_label`, `*.cta_href`, `*.href` | `string` | `| safe` |
 | `footer.credit_html` | `string` | `| safe` целиком |
 
-**Типографика (опционально):** Eleventy-фильтр `typo`, приклеивающий `&nbsp;`
-после однобуквенных/коротких предлогов и союзов (`в`, `и`, `на`, `с`, `к`, `о`,
-`от`, `по`, `не`, `а`, `но`…) и заменяющий `--` → `—`. Редактор пишет обычный
-текст, неразрывные пробелы расставляются на сборке. Фильтр включается флагом в
-`.eleventy.js`; при осечках отключается одной строкой, `&nbsp;` можно ставить
-вручную в markdown.
+**Типографика (опционально, по умолчанию выключена):** Eleventy-фильтр `typo`,
+приклеивающий `&nbsp;` после однобуквенных/коротких предлогов и союзов (`в`, `и`,
+`на`, `с`, `к`, `о`, `от`, `по`, `не`, `а`, `но`…) и заменяющий `--` → `—`.
+Включается флагом в `.eleventy.js`; по умолчанию выключен, чтобы не ломать
+побайтную сверку. Применяется точечно и только если заказчик захочет
+автоматизацию — тогда `&nbsp;` в данных чистятся, а расстановка уходит в фильтр.
 
 ## 7. План верификации
 
@@ -291,9 +299,9 @@ GitHub → Settings → Developer settings → OAuth Apps → New:
 | Риск | Мера |
 |---|---|
 | Сгенерённый HTML разошёлся с исходным (эффекты/раскладка поехали) | Скрипт-парити (7.1) + ручной визуальный проход до мержа |
-| Редактор через markdown вставит разметку, ломающую split-type/GSAP | Урезанный тулбар; прозаические блоки содержат только текст, без интерактивных элементов |
+| Редактор впишет в text-поле разметку, ломающую split-type/GSAP | Поля прозы выводят текст внутри существующих элементов; интерактив (`data-effect-*`, флип-кнопки) — в шаблоне, не в данных. Ревью diff YAML перед мержем |
 | Worker/OAuth не поднялся | `local_backend` даёт полноценное локальное редактирование; сайт от Worker'а не зависит |
-| `typo`-фильтр расставил `&nbsp;` криво | Фича опциональна, отключается флагом; ручной `&nbsp;` в markdown остаётся возможен |
+| `typo`-фильтр расставил `&nbsp;` криво | По умолчанию выключен; включается флагом; ручной `&nbsp;` в данных остаётся возможен |
 | CDN Decap упал / supply-chain | Вендоренная копия `admin/decap-cms.js` в репо, CDN не используется |
 | Переключение Pages на Actions ломает текущий деплой на время настройки | Делать после того, как workflow готов и проверен на форке/ветке |
 
@@ -304,7 +312,7 @@ GitHub → Settings → Developer settings → OAuth Apps → New:
    зелёный, сайт идентичен.
 2. **Вынос контента:** секция за секцией — HTML → `_includes/partials/*.njk` +
    `_data/*.yml`, после каждой секции прогон парити.
-3. **Фильтры** `md` и `typo`, подключение в `.eleventy.js`.
+3. **Фильтр** `typo` (опциональный, по умолчанию выключен), подключение в `.eleventy.js`.
 4. **GitHub Actions** (`deploy.yml`), переключение Pages, первый деплой.
 5. **`admin/`**: `index.html`, `config.yml`, вендоренный `decap-cms.js`;
    проверка всех коллекций через `local_backend`.
