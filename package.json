@@ -1,0 +1,15 @@
+{
+  "name": "zimablue-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "parity": "node scripts/parity-check.mjs",
+    "cms": "decap-server"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "decap-server": "^3.1.3"
+  }
+}

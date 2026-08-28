@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ZimaBlue. Исследовательское агентство</title>
+    <link rel="stylesheet" type="text/css" href="src/css/bulma.css" />
+    <link rel="stylesheet" type="text/css" href="src/css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="src/css/lnu1fpi.css" />
+
+    <link rel="icon" type="image/x-icon" href="src/img/favicon.png">
+
+    <script src="src/js/webfont.js"></script>
+    <script>document.documentElement.className = "js";</script>
+{% if spaRedirect %}
+    <script>
+        window.location.href = "/";
+
+        if (window.sessionStorage.path) {
+            let path = window.sessionStorage.path;
+            window.history.pushState(null, null, path);
+            window.sessionStorage.removeItem('path');
+
+        } else {
+            let path = window.location.pathname;
+            window.sessionStorage.path = path;
+            window.location.href = '/';
+        }
+    </script>
+{% else %}
+    <!-- <script>
+        window.location.href = "/";
+
+        if (window.sessionStorage.path) {
+            let path = window.sessionStorage.path;
+            window.history.pushState(null, null, path);
+            window.sessionStorage.removeItem('path');
+
+        } else {
+            let path = window.location.pathname;
+            window.sessionStorage.path = path;
+            window.location.href = '/';
+        }
+    </script> -->
+{% endif %}
+</head>
+
+<body>
+{{ content | safe }}
+</body>
+
+<!-- Javascript -->
+<script src="src/js/jquery.js"></script>
+<script src="src/js/bulma.js"></script>
+<!-- Gravity Effect -->
+<script type="text/javascript" src="src/js/jGravity.js"></script>
+<script>
+    $(document).ready(() => {
+        $('section.hero').jGravity({
+            target: 'span',
+            weight: 8,
+            depth: 1,
+            drag: true,
+            interval: 400
+        });
+    });
+
+    document.querySelectorAll('.jGravity .tag').forEach(tag => {
+        const randomLeft = Math.random() * 100;
+        tag.style.left = `${randomLeft}vw`;
+    });
+
+</script>
+<!-- Scroll Text Effect -->
+<script src="src/js/gsap.min.js"></script>
+<script src="src/js/ScrollTrigger.min.js"></script>
+<script src="src/js/split-type.min.js"></script>
+<script src="src/js/lenis.min.js"></script>
+<script src="src/js/smoothscroll.js"></script>
+<script src="src/js/index.js" type="module"></script>
+<!-- Running Line -->
+<script src="src/js/running-line.js"></script>
+<!-- Bulma Tabs -->
+<script src="src/js/tabs.js"></script>
+<!-- Bulma Modals -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const modalButtons = document.querySelectorAll('.open-modal-btn');
+        modalButtons.forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                const target = btn.getAttribute('data-target'); // Получаем идентификатор модального окна
+                const modal = document.getElementById(target); // Находим соответствующее модальное окно
+                modal.classList.add('is-active'); // Добавляем класс для отображения модального окна
+            });
+        });
+        const closeModalButtons = document.querySelectorAll('.modal .delete, .modal-background');
+        closeModalButtons.forEach(function (closeBtn) {
+            closeBtn.addEventListener('click', function () {
+                const modal = closeBtn.closest('.modal'); // Находим ближайшее модальное окно
+                modal.classList.remove('is-active'); // Удаляем класс для закрытия модального окна
+            });
+        });
+    });
+
+</script>
+<!-- Flip Cards -->
+<script>
+    document.querySelectorAll('.flip-icon').forEach(icon => {
+        icon.addEventListener('click', function () {
+            const cardInner = this.previousElementSibling;
+            cardInner.style.transform = cardInner.style.transform === 'rotateY(180deg)' ? '' : 'rotateY(180deg)';
+        });
+    });
+
+</script>
+<!-- Button Toggle -->
+<script>
+    function toggleIcon(button) {
+        button.classList.toggle('active');
+    }
+</script>
+
+</html>
