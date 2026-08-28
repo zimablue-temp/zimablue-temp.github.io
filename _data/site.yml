@@ -28,3 +28,12 @@ hero:
     - { text: "реклама",      colorful: false }
     - { text: "дизайн",       colorful: false }
     - { text: "эффективность", colorful: true }
+footer:
+  links:
+    - { label: "О&nbsp;нас",        href: "#about" }
+    - { label: "Услуги",            href: "#services" }
+    - { label: "Преимущества",      href: "#benefits" }
+    - { label: "Исследования",      href: "#research" }
+    - { label: "Отзывы",            href: "#feedback" }
+  instagram: { label: "Instagram", href: "https://www.instagram.com/zimablue.co/" }
+  credit_html: 'Собрано <a href="http://tinystudio.cc" class="ts" target="_blank">Tiny Studio</a>, 2024'
