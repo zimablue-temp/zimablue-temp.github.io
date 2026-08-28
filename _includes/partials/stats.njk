@@ -1,0 +1,12 @@
+    <section class="has-background-white is-medium" style="padding-bottom: 144px;">
+        <div class="services-ticker-block">
+            <div class="stb_line_single">
+                {% for item in stats.items %}
+                <a class="stb-item is-clickable">
+                    <p class="title{% if item.accent %} accent{% endif %}">{{ item.value | safe }}</p>
+                    <p class="subtitle">{{ item.label | safe }}</p>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    </section>

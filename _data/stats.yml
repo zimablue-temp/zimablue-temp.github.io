@@ -1,0 +1,13 @@
+items:
+  - value: "5<small>+</small>"
+    label: "лет на&nbsp;рынке"
+    accent: false
+  - value: "120<small>+</small>"
+    label: "проведенных фокус-групп"
+    accent: false
+  - value: "350<small>+</small>"
+    label: "онлайн исследований"
+    accent: true
+  - value: "<small>от</small>&nbsp;3&nbsp;000 <small>до</small>&nbsp;10&nbsp;000 <small>человек</small>"
+    label: "активная база наших респондентов"
+    accent: false
