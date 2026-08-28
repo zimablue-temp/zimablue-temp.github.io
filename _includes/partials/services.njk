@@ -1,0 +1,40 @@
+    <section class="section has-background-white is-medium" id="services">
+        <div class="container">
+            <div class="title-with-icon">
+                <img src="src/img/icons/icon-arrow-left.svg">
+                <p>{{ services.eyebrow | safe }}</p>
+            </div>
+            <div class="columns">
+                {% for card in services.cards %}
+                <div class="column">
+                    <div class="flip-card cards-service">
+                        <div class="flip-card-inner">
+                            <div
+                                class="flip-card-front is-flex is-flex-direction-column is-justify-content-space-between">
+                                <p class="title">
+                                    {{ card.title | safe }}
+                                </p>
+                                <p class="subtitle">
+                                    {{ card.front_text | safe }}
+                                </p>
+                                <p class="is-hidden-tablet"></p>
+                            </div>
+                            <div
+                                class="flip-card-back is-flex is-flex-direction-column is-justify-content-space-between">
+                                <p class="subtitle has-text-white">
+                                    {{ card.back_text | safe }}
+                                </p>
+                                <a class="button is-white is-outlined is-rounded" href="{{ card.cta_href }}"
+                                    target="_blank">{{ card.cta_label | safe }}</a>
+                                <p class="is-hidden-tablet"></p>
+                            </div>
+                        </div>
+                        <button class="flip-icon" onclick="toggleIcon(this)">
+                            <span class="icon ignoreMe"></span>
+                        </button>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
