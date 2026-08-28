@@ -1,0 +1,16 @@
+    <!-- Modal Sheets -->
+    {% for item in feedback.items %}
+    <div id="modal-id-{{ item.slug }}" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <button class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+                <img src="{{ item.letter_image }}" />
+            </section>
+            <footer class="modal-card-foot">
+            </footer>
+        </div>
+    </div>
+    {% endfor %}
