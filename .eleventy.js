@@ -1,7 +1,9 @@
 import yaml from "js-yaml";
+import { typo } from "./lib/typo.mjs";
 
 export default function (eleventyConfig) {
   eleventyConfig.addDataExtension("yaml,yml", (contents) => yaml.load(contents));
+  eleventyConfig.addFilter("typo", typo);
 
   eleventyConfig.addPassthroughCopy("src");
   eleventyConfig.addPassthroughCopy("admin");
