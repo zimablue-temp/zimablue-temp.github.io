@@ -15,3 +15,16 @@ nav:
 cta:
   label: "Заказать исследование"
   href: "https://t.me/+77066396195"
+hero:
+  headline: 'Не&nbsp;предполагаем,<br /><i>а&nbsp;исследуем</i>'
+  tags:
+    - { text: "UX/UI",        colorful: true  }
+    - { text: "тренды",       colorful: false }
+    - { text: "перспективы",  colorful: false }
+    - { text: "аудитории",    colorful: true  }
+    - { text: "бренды",       colorful: false }
+    - { text: "гипотезы",     colorful: false }
+    - { text: "фокус-группы", colorful: true  }
+    - { text: "реклама",      colorful: false }
+    - { text: "дизайн",       colorful: false }
+    - { text: "эффективность", colorful: true }

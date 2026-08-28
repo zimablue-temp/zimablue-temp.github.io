@@ -1,0 +1,10 @@
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <p class="pt-6">{{ site.hero.headline | safe }}</p>
+            </div>
+        </div>
+        <div class="jGravity">
+            {% for tag in site.hero.tags %}
+            <span class="tag{% if tag.colorful %} colorful{% endif %}">{{ tag.text | safe }}</span>
+            {% endfor %}
+        </div>
