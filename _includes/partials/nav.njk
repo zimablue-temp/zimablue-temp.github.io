@@ -1,0 +1,24 @@
+<nav class="navbar">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="#">
+                <img src="{{ site.brand.logo }}" alt="{{ site.brand.logo_alt }}" />
+            </a>
+            <span class="navbar-burger ignoreMe" data-target="navbarMenuHeroB">
+                <span class="ignoreMe"></span>
+                <span class="ignoreMe"></span>
+                <span class="ignoreMe"></span>
+                <span class="ignoreMe"></span>
+            </span>
+        </div>
+        <div id="navbarMenuHeroB" class="navbar-menu">
+            <div class="navbar-end">
+                {% for item in site.nav %}
+                <a class="navbar-item has-text-black is-uppercase" href="{{ item.href }}"> {{ item.label | safe }} </a>
+                {% endfor %}
+                <a class="navbar-item has-text-black is-uppercase" href="{{ site.cta.href }}"
+                    target="_blank"> {{ site.cta.label | safe }} </a>
+            </div>
+        </div>
+    </div>
+</nav>

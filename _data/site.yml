@@ -1,0 +1,17 @@
+meta:
+  title: "ZimaBlue. Исследовательское агентство"
+  description: ""            # empty => no <meta name="description"> is emitted (parity)
+  lang: "ru"
+  theme: "light"
+brand:
+  logo: "src/img/zimablue.svg"
+  logo_alt: "Logo"
+  favicon: "src/img/favicon.png"
+nav:
+  - { label: "О&nbsp;нас", href: "#about" }
+  - { label: "Услуги", href: "#services" }
+  - { label: "Исследования", href: "#research" }
+  - { label: "Отзывы", href: "#feedback" }
+cta:
+  label: "Заказать исследование"
+  href: "https://t.me/+77066396195"

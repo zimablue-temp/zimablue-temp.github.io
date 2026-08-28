@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="ru" data-theme="light">
+<html lang="{{ site.meta.lang }}" data-theme="{{ site.meta.theme }}">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ZimaBlue. Исследовательское агентство</title>
+    <title>{{ site.meta.title | safe }}</title>
+    {% if site.meta.description %}<meta name="description" content="{{ site.meta.description }}">{% endif %}
     <link rel="stylesheet" type="text/css" href="src/css/bulma.css" />
     <link rel="stylesheet" type="text/css" href="src/css/styles.css" />
     <link rel="stylesheet" type="text/css" href="src/css/lnu1fpi.css" />
 
-    <link rel="icon" type="image/x-icon" href="src/img/favicon.png">
+    <link rel="icon" type="image/x-icon" href="{{ site.brand.favicon }}">
 
     <script src="src/js/webfont.js"></script>
     <script>document.documentElement.className = "js";</script>
