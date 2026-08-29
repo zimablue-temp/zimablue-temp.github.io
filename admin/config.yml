@@ -2,7 +2,7 @@ backend:
   name: github
   repo: zimablue-temp/zimablue-temp.github.io
   branch: main
-  base_url: https://REPLACE-WITH-WORKER.workers.dev   # set in Task 16 Step 6
+  base_url: https://zimablue-cms-oauth.stitre.workers.dev
 
 local_backend: true
 publish_mode: simple
