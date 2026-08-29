@@ -6,15 +6,20 @@ const GITHUB_AUTHORIZE = "https://github.com/login/oauth/authorize";
 const GITHUB_TOKEN = "https://github.com/login/oauth/access_token";
 
 function renderCallback(status, payload) {
-  const content = JSON.stringify({ ...payload });
+  // The full message Decap expects, e.g.
+  //   authorization:github:success:{"token":"...","provider":"github"}
+  const message = `authorization:github:${status}:${JSON.stringify(payload)}`;
+  // Emit it as a JSON string literal so inner quotes are escaped; also
+  // neutralise "<" so a payload can never break out of the <script>.
+  const messageLiteral = JSON.stringify(message).replace(/</g, "\\u003c");
   return `<!doctype html><html><body><script>
   (function () {
-    function post(message) {
-      window.opener && window.opener.postMessage(message, "*");
+    function post(m) {
+      window.opener && window.opener.postMessage(m, "*");
     }
     post("authorizing:github");
     window.addEventListener("message", function () {
-      post("authorization:github:${status}:${content.replace(/</g, "\\u003c")}");
+      post(${messageLiteral});
     }, { once: true });
   })();
   </script></body></html>`;
