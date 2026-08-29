@@ -26,7 +26,11 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
-      - run: npm run parity
+      # `npm run parity` is intentionally not run here: it diffs the build
+      # against a pre-CMS snapshot (test/fixtures/*.golden.html) and was a
+      # one-off guard for the Eleventy port. Every CMS content edit now
+      # legitimately changes the output, so gating deploys on it would block
+      # all publishing. Run it locally after template/layout changes instead.
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
