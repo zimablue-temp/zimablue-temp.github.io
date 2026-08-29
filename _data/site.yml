@@ -1,0 +1,39 @@
+meta:
+  title: "ZimaBlue. Исследовательское агентство"
+  description: ""            # empty => no <meta name="description"> is emitted (parity)
+  lang: "ru"
+  theme: "light"
+brand:
+  logo: "src/img/zimablue.svg"
+  logo_alt: "Logo"
+  favicon: "src/img/favicon.png"
+nav:
+  - { label: "О&nbsp;нас", href: "#about" }
+  - { label: "Услуги", href: "#services" }
+  - { label: "Исследования", href: "#research" }
+  - { label: "Отзывы", href: "#feedback" }
+cta:
+  label: "Заказать исследование"
+  href: "https://t.me/+77066396195"
+hero:
+  headline: 'Не&nbsp;предполагаем,<br /><i>а&nbsp;исследуем</i>'
+  tags:
+    - { text: "UX/UI",        colorful: true  }
+    - { text: "тренды",       colorful: false }
+    - { text: "перспективы",  colorful: false }
+    - { text: "аудитории",    colorful: true  }
+    - { text: "бренды",       colorful: false }
+    - { text: "гипотезы",     colorful: false }
+    - { text: "фокус-группы", colorful: true  }
+    - { text: "реклама",      colorful: false }
+    - { text: "дизайн",       colorful: false }
+    - { text: "эффективность", colorful: true }
+footer:
+  links:
+    - { label: "О&nbsp;нас",        href: "#about" }
+    - { label: "Услуги",            href: "#services" }
+    - { label: "Преимущества",      href: "#benefits" }
+    - { label: "Исследования",      href: "#research" }
+    - { label: "Отзывы",            href: "#feedback" }
+  instagram: { label: "Instagram", href: "https://www.instagram.com/zimablue.co/" }
+  credit_html: 'Собрано <a href="http://tinystudio.cc" class="ts" target="_blank">Tiny Studio</a>, 2024'

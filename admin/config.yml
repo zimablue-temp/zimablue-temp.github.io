@@ -1,0 +1,200 @@
+backend:
+  name: github
+  repo: zimablue-temp/zimablue-temp.github.io
+  branch: main
+  base_url: https://zimablue-cms-oauth.stitre.workers.dev
+
+local_backend: true
+publish_mode: simple
+logo_url: /src/img/zimablue.svg
+media_folder: src/img/uploads
+public_folder: src/img/uploads
+locale: ru
+
+collections:
+  - name: site
+    label: "Настройки сайта"
+    files:
+      - name: site
+        label: "Настройки сайта"
+        file: _data/site.yml
+        fields:
+          - name: meta
+            label: "Мета"
+            widget: object
+            fields:
+              - { name: title, label: "Title", widget: string }
+              - { name: description, label: "Meta description", widget: string, required: false }
+              - { name: lang, label: "lang", widget: string, default: "ru" }
+              - { name: theme, label: "Тема", widget: select, options: ["light", "dark"], default: "light" }
+          - name: brand
+            label: "Бренд"
+            widget: object
+            fields:
+              - { name: logo, label: "Логотип", widget: image }
+              - { name: logo_alt, label: "alt логотипа", widget: string }
+              - { name: favicon, label: "Favicon", widget: image }
+          - name: nav
+            label: "Меню (шапка)"
+            widget: list
+            fields:
+              - { name: label, label: "Текст", widget: string }
+              - { name: href, label: "Ссылка", widget: string }
+          - name: cta
+            label: "Кнопка «Заказать исследование»"
+            widget: object
+            fields:
+              - { name: label, widget: string }
+              - { name: href, widget: string }
+          - name: hero
+            label: "Первый экран"
+            widget: object
+            fields:
+              - { name: headline, label: "Заголовок (допускается HTML: <br />, <i>)", widget: text }
+              - name: tags
+                label: "Летающие теги"
+                widget: list
+                fields:
+                  - { name: text, label: "Текст", widget: string }
+                  - { name: colorful, label: "Цветной", widget: boolean, default: false }
+          - name: footer
+            label: "Футер"
+            widget: object
+            fields:
+              - name: links
+                label: "Ссылки"
+                widget: list
+                fields:
+                  - { name: label, widget: string }
+                  - { name: href, widget: string }
+              - name: instagram
+                widget: object
+                fields:
+                  - { name: label, widget: string }
+                  - { name: href, widget: string }
+              - { name: credit_html, label: "Подпись (HTML)", widget: string }
+
+  - name: about
+    label: "О нас"
+    files:
+      - name: about
+        label: "О нас"
+        file: _data/about.yml
+        fields:
+          - { name: eyebrow, label: "Надзаголовок", widget: string }
+          - { name: body, label: "Текст (допускается HTML)", widget: text }
+
+  - name: services
+    label: "Услуги"
+    files:
+      - name: services
+        label: "Услуги"
+        file: _data/services.yml
+        fields:
+          - { name: eyebrow, widget: string }
+          - name: cards
+            label: "Карточки услуг"
+            widget: list
+            fields:
+              - { name: title, label: "Заголовок (HTML)", widget: string }
+              - { name: front_text, label: "Текст лицевой стороны (HTML)", widget: text }
+              - { name: back_text, label: "Текст оборота (HTML)", widget: text }
+              - { name: cta_label, widget: string }
+              - { name: cta_href, widget: string }
+
+  - name: benefits
+    label: "Преимущества"
+    files:
+      - name: benefits
+        label: "Преимущества"
+        file: _data/benefits.yml
+        fields:
+          - { name: eyebrow, widget: string }
+          - { name: body, label: "Текст (HTML)", widget: text }
+
+  - name: stats
+    label: "Цифры"
+    files:
+      - name: stats
+        label: "Цифры"
+        file: _data/stats.yml
+        fields:
+          - name: items
+            label: "Показатели"
+            widget: list
+            fields:
+              - { name: value, label: "Значение (HTML, можно <small>)", widget: string }
+              - { name: label, label: "Подпись", widget: string }
+              - { name: accent, label: "Акцентный цвет", widget: boolean, default: false }
+
+  - name: research
+    label: "Исследования"
+    files:
+      - name: research
+        label: "Исследования"
+        file: _data/research.yml
+        fields:
+          - { name: eyebrow, widget: string }
+          - name: cards
+            label: "Карточки исследований"
+            widget: list
+            fields:
+              - { name: title, label: "Заголовок (HTML)", widget: string }
+              - { name: back_text, label: "Текст оборота (HTML)", widget: text }
+              - { name: cta_label, widget: string }
+              - { name: cta_href, widget: string }
+
+  - name: feedback
+    label: "Рекомендательные письма"
+    files:
+      - name: feedback
+        label: "Рекомендательные письма"
+        file: _data/feedback.yml
+        fields:
+          - { name: eyebrow, widget: string }
+          - name: items
+            label: "Письма"
+            widget: list
+            fields:
+              - { name: slug, label: "slug (уникальный, латиницей)", widget: string, pattern: ["^[a-z0-9-]+$", "только строчные латинские буквы, цифры и дефис"] }
+              - { name: tab_label, label: "Подпись вкладки", widget: string }
+              - { name: quote, label: "Цитата (HTML)", widget: text }
+              - { name: author, label: "Автор (HTML; <br /> — перенос строки)", widget: text }
+              - { name: letter_image, label: "Скан письма", widget: image, media_folder: "/src/docs", public_folder: "src/docs" }
+
+  - name: partners
+    label: "Нам доверяют"
+    files:
+      - name: partners
+        label: "Нам доверяют"
+        file: _data/partners.yml
+        fields:
+          - { name: eyebrow, widget: string }
+          - name: logos
+            label: "Логотипы (пусто = бегущая строка из плейсхолдеров)"
+            widget: list
+            required: false
+            fields:
+              - { name: name, label: "Название", widget: string }
+              - { name: logo, label: "Логотип", widget: image }
+
+  - name: contacts
+    label: "Контакты"
+    files:
+      - name: contacts
+        label: "Контакты"
+        file: _data/contacts.yml
+        fields:
+          - { name: eyebrow, widget: string }
+          - name: email
+            widget: object
+            fields:
+              - { name: address, label: "Адрес", widget: string }
+              - { name: subject, label: "Тема письма", widget: string }
+              - { name: cc, label: "Копия (cc)", widget: string }
+              - { name: label, label: "Отображаемый текст", widget: string }
+          - name: instagram
+            widget: object
+            fields:
+              - { name: label, widget: string }
+              - { name: url, widget: string }

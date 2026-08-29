@@ -1,0 +1,37 @@
+    <section class="section has-background-white is-medium" id="partners">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-four-fifths">
+                    <div class="title-with-icon">
+                        <img src="src/img/icons/icon-arrow-left.svg">
+                        <p>{{ partners.eyebrow | safe }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="has-background-white is-medium" style="padding-bottom: 144px;">
+        <div class="wrap">
+            {% macro track(reverce, hidden) %}
+            <div{% if hidden %} aria-hidden="true"{% endif %} class="items marquee{% if reverce %} reverce{% endif %}">
+                {% if partners.logos | length %}
+                {% for logo in partners.logos %}
+                <div class="item"><img src="{{ logo.logo }}" alt="{{ logo.name }}" /></div>
+                {% endfor %}
+                {% else %}
+                {% for _ in range(12) %}
+                <div class="item"></div>
+                {% endfor %}
+                {% endif %}
+            </div>
+            {% endmacro %}
+            <div class="items-wrap">
+                {{ track(false, false) }}
+                {{ track(false, true) }}
+            </div>
+            <div class="items-wrap">
+                {{ track(true, false) }}
+                {{ track(true, true) }}
+            </div>
+        </div>
+    </section>

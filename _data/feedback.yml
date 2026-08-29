@@ -1,0 +1,73 @@
+eyebrow: "Рекомендательные письма"
+items:
+  - slug: tele2
+    tab_label: "Tele2"
+    letter_image: "src/docs/tele2.jpg"
+    quote: >-
+      Организация показала высокий уровень професионализма и&nbsp;компетентности
+      в&nbsp;аспектах продвижения проектов в&nbsp;онлайн среде
+    author: "Зозулевич В.Ю. <br /> Директор по&nbsp;организационному развитию<br /> и&nbsp;работе с&nbsp;персоналом"
+  - slug: almau
+    tab_label: "AlmaU"
+    letter_image: "src/docs/almau.jpeg"
+    quote: >-
+      Мы&nbsp;рекомендуем Исследовательское Агентство ZimaBlue как
+      высококвалифицированного
+      и&nbsp;надежного партнера в&nbsp;области образования и&nbsp;исследований
+    author: "Школа медиа и кино <br /> Almaty Management University"
+  - slug: alphauz
+    tab_label: "Alpha"
+    letter_image: "src/docs/alphauz.jpeg"
+    quote: >-
+      Их&nbsp;уникальный опыт и&nbsp;творческий подход позволили нам вместе создать
+      курс,
+      который теперь пользуется большой популярностью среди наших пользователей
+    author: "Команда ALPHA <br /> ALPHA SOLUTIONS"
+  - slug: jusan
+    tab_label: "Jusan"
+    letter_image: "src/docs/jusan.jpeg"
+    quote: >-
+      Готовность агентства адаптироваться к&nbsp;нашим потребностям и&nbsp;обращать
+      внимание
+      на&nbsp;детали&nbsp;&mdash; делает Вас надежным и&nbsp;ценным партнером
+    author: "Калыбаев А.М. <br /> Team Lead Департамента маркетинга AO «Jusan Bank»"
+  - slug: fet
+    tab_label: "Фонд Татишева"
+    letter_image: "src/docs/tatishev.jpeg"
+    quote: >-
+      Заслуга ZimaBlue в&nbsp;том, что их&nbsp;методика отбора была не&nbsp;только
+      эффективной, но&nbsp;и&nbsp;мотивирующей для всех участников. Это
+      свидетельствует
+      о&nbsp;глубоком понимании задач и&nbsp;потребностей Фонда.
+    author: "Дана Жарикова <br /> Президент Фонда Ержана Татишева"
+  - slug: ac
+    tab_label: "American Councils"
+    letter_image: "src/docs/americancouncil.jpeg"
+    quote: >-
+      Хочется отметить высокую компетентность, организованность, эффективность
+      и&nbsp;творческий подход к&nbsp;абсолютно каждой задаче
+    author: "Д.Леонард <br /> Директор American Councils"
+  - slug: bc
+    tab_label: "British Councils"
+    letter_image: "src/docs/britishcouncil.jpg"
+    quote: >-
+      ...руководитель проекта Фарангиза Шукашева продемонстрировала высокий уровень
+      профессионализма в&nbsp;ходе имплементации ряда проектов и&nbsp;мероприятий
+      Британского
+      совета
+    author: "Роуэн Кеннеди <br /> Директор Британского совета при Посольстве Великобритании в&nbsp;РК"
+  - slug: citix
+    tab_label: "CITIX"
+    letter_image: "src/docs/citix.jpeg"
+    quote: >-
+      Особо отмечаем глубоĸое погружение в&nbsp;задачи, высоĸое ĸачество подготовĸи
+      материалов и&nbsp;чётĸую ĸоммуниĸацию на&nbsp;всех этапах. Исследование стало
+      основой для
+      принятия управленчесĸих решений и&nbsp;оценĸи новых направлений роста.
+    author: "Тян Е.С. <br /> Диреĸтор ТОО ТД&nbsp;&laquo;Monkey&rsquo;s House&raquo;"
+  - slug: ofcorp
+    tab_label: "OF CORP"
+    letter_image: "src/docs/ofcorp.jpeg"
+    quote: >-
+      …профессиональный подход, внимательность ĸ деталям и&nbsp;аналитичесĸая точность позволили выявить важные инсайты и&nbsp;определить потенциальные точĸи роста для дальнейшего развития нашего бренда.
+    author: "Хусаинов Ю.Х. <br /> Генеральный диреĸтор TOO «OF&nbsp;Corp»"

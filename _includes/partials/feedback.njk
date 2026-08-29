@@ -1,0 +1,45 @@
+    <section class="section has-background-white is-medium pb-0" id="feedback">
+        <div class="container">
+            <div class="title-with-icon">
+                <img src="src/img/icons/icon-arrow-left.svg">
+                <p>{{ feedback.eyebrow | safe }}</p>
+            </div>
+            <div class="tabs is-hidden-mobile">
+                {% for item in feedback.items %}
+                <button class="tab-button{% if loop.first %} active{% endif %}" data-tab="tab{{ loop.index }}">{{ item.tab_label | safe }}</button>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <section class="has-background-white is-hidden-tablet">
+        <div class="tabs" style="padding: 0 24px;">
+            {% for item in feedback.items %}
+            <button class="tab-button{% if loop.first %} active{% endif %}" data-tab="tab{{ loop.index }}">{{ item.tab_label | safe }}</button>
+            {% endfor %}
+        </div>
+    </section>
+    <section class="section has-background-white is-medium pt-6">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-three-quarters">
+                    {% for item in feedback.items %}
+                    <div class="tab-content{% if loop.first %} active{% endif %}" id="tab{{ loop.index }}">
+                        <div class="cards-service">
+                            <div class="is-flex is-flex-direction-column is-justify-content-space-between">
+                                <p class="title">
+                                    {{ item.quote | safe }}
+                                </p>
+                                <p class="subtitle">
+                                    {{ item.author | safe }}
+                                </p>
+                                <button class="open-modal-btn feedback" data-target="modal-id-{{ item.slug }}">
+                                    <span class="icon ignoreMe">+</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>

@@ -1,0 +1,18 @@
+    <section class="section has-background-white is-medium is-relative" id="contacts">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-four-fifths">
+                    <div class="title-with-icon">
+                        <img src="src/img/icons/icon-arrow-left.svg">
+                        <p>{{ contacts.eyebrow | safe }}</p>
+                    </div>
+                    <p class="has-text-black is-black is-size-3">email: <a
+                            href="mailto:{{ contacts.email.address }}?subject={{ contacts.email.subject }}&cc={{ contacts.email.cc }}"
+                            target="_blank" class="text-links">{{ contacts.email.label | safe }}</a></p>
+                    <p class="has-text-black is-black is-size-3">instagram: <a
+                            href="{{ contacts.instagram.url }}" target="_blank"
+                            class="text-links">{{ contacts.instagram.label | safe }}</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
