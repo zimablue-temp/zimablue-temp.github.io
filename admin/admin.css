@@ -1,0 +1,570 @@
+/* ==========================================================================
+   ZimaBlue — reskin for Decap CMS 3.15 admin
+   --------------------------------------------------------------------------
+   Approach: Decap ships a compiled React app styled with emotion. There is
+   no theme API and no CSS custom properties to hook, so this file skins the
+   UI by matching the *stable* part of emotion class names — the label suffix
+   (e.g. `css-1a2b3c-SidebarNavLink` -> we match [class*="-SidebarNavLink"]).
+   The `css-HASH` prefix changes on every re-vendor of decap-cms.js; the
+   `-Label` suffix does not. Each block below is commented with the surface
+   it targets so a future re-vendor can be re-checked quickly.
+
+   `!important` is used deliberately on contested properties (background,
+   color, border, radius, shadow, padding, font) because emotion's runtime
+   <style> tags are injected after this stylesheet and would otherwise win.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* --------------------------------------------------------------------------
+   Design tokens  (neutral product base + ZimaBlue accent)
+   -------------------------------------------------------------------------- */
+:root {
+  --zb-accent:        #4D8FC4;   /* brand blue — rings, borders, tints        */
+  --zb-accent-solid:  #3f80b3;   /* fills that carry white text (AA-safe)     */
+  --zb-accent-hover:  #386f9c;
+  --zb-accent-ink:    #1f6fb2;   /* accent as text/links on white (AA)        */
+  --zb-accent-tint:   rgba(77, 143, 196, 0.10);
+  --zb-accent-tint-2: rgba(77, 143, 196, 0.16);
+  --zb-accent-ring:   rgba(77, 143, 196, 0.35);
+
+  --zb-bg:            #f6f7f9;    /* app background                            */
+  --zb-surface:       #ffffff;   /* cards, inputs, bars                       */
+  --zb-surface-2:     #f4f6f8;   /* nested / striped / hover                  */
+  --zb-border:        #e4e7eb;
+  --zb-border-strong: #d3d8de;
+
+  --zb-ink:   #1a1d21;           /* primary text                             */
+  --zb-ink-2: #5b6470;           /* secondary text / labels                  */
+  --zb-ink-3: #8a929c;           /* hints / placeholder                      */
+
+  --zb-radius-sm: 6px;
+  --zb-radius:    8px;
+  --zb-radius-lg: 12px;
+
+  --zb-shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.04), 0 1px 3px rgba(16, 24, 40, 0.06);
+  --zb-shadow-md: 0 4px 12px rgba(16, 24, 40, 0.08), 0 2px 6px rgba(16, 24, 40, 0.05);
+  --zb-shadow-lg: 0 12px 32px rgba(16, 24, 40, 0.14), 0 4px 12px rgba(16, 24, 40, 0.08);
+
+  --zb-font: 'Inter', ui-sans-serif, -apple-system, BlinkMacSystemFont,
+             'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* --------------------------------------------------------------------------
+   Global: font + background
+   Decap sets fonts on individual components, so push the family broadly and
+   let it inherit; override the loud spots explicitly further down.
+   -------------------------------------------------------------------------- */
+#nc-root,
+#nc-root input,
+#nc-root textarea,
+#nc-root select,
+#nc-root button,
+.ReactModalPortal,
+.ReactModalPortal input,
+.ReactModalPortal textarea,
+.ReactModalPortal button,
+.Toastify {
+  font-family: var(--zb-font) !important;
+}
+
+#nc-root {
+  color: var(--zb-ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* app + editor scroll areas */
+#nc-root [class*="-AppMainContainer"],
+#nc-root [class*="-EditorContainer"],
+#nc-root [class*="-CollectionContainer"] {
+  background: var(--zb-bg) !important;
+}
+
+/* thin, quiet scrollbars */
+#nc-root *::-webkit-scrollbar { width: 10px; height: 10px; }
+#nc-root *::-webkit-scrollbar-thumb {
+  background: #cdd2d8;
+  border: 2px solid transparent;
+  background-clip: content-box;
+  border-radius: 8px;
+}
+#nc-root *::-webkit-scrollbar-thumb:hover { background: #b6bdc5; background-clip: content-box; }
+#nc-root *::-webkit-scrollbar-track { background: transparent; }
+
+/* --------------------------------------------------------------------------
+   Login screen
+   ( section css-…-StyledAuthenticationPage > span …-CustomIconWrapper > img
+     + button css-…-LoginButton-… ; local-backend build has no wrapper card )
+   -------------------------------------------------------------------------- */
+#nc-root [class*="-StyledAuthenticationPage"] {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 100vh !important;
+  background: var(--zb-bg) !important;
+  gap: 22px !important;
+}
+#nc-root [class*="-CustomIconWrapper"],
+#nc-root [class*="-StyledAuthenticationPage"] img {
+  width: 176px !important;
+  height: auto !important;
+  margin: 0 !important;
+}
+#nc-root button[class*="-LoginButton"] {
+  background: var(--zb-accent-solid) !important;
+  color: #fff !important;
+  border: 0 !important;
+  border-radius: var(--zb-radius) !important;
+  padding: 11px 22px !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  box-shadow: var(--zb-shadow-sm) !important;
+  transition: background 120ms ease, transform 60ms ease;
+}
+#nc-root button[class*="-LoginButton"]:hover { background: var(--zb-accent-hover) !important; }
+#nc-root button[class*="-LoginButton"]:active { transform: translateY(1px); }
+
+/* --------------------------------------------------------------------------
+   App header  ( header css-…-AppHeader-css )
+   -------------------------------------------------------------------------- */
+#nc-root header[class*="-AppHeader"] {
+  background: var(--zb-surface) !important;
+  border-bottom: 1px solid var(--zb-border) !important;
+  border-top: 2px solid var(--zb-accent) !important;   /* single brand hint */
+  box-shadow: var(--zb-shadow-sm) !important;
+  min-height: 56px !important;
+}
+#nc-root [class*="-AppHeaderContent"] { padding: 0 20px !important; }
+
+/* top nav items: Записи / Медиафайлы */
+#nc-root [class*="-AppHeaderNavList"] a,
+#nc-root [class*="-AppHeader"] nav a {
+  color: var(--zb-ink-2) !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  border-radius: var(--zb-radius-sm) !important;
+  padding: 7px 12px !important;
+  transition: background 120ms ease, color 120ms ease;
+}
+#nc-root [class*="-AppHeaderNavList"] a:hover,
+#nc-root [class*="-AppHeader"] nav a:hover {
+  color: var(--zb-ink) !important;
+  background: var(--zb-surface-2) !important;
+}
+#nc-root [class*="-AppHeaderNavList"] a.active,
+#nc-root [class*="-AppHeader"] nav a.active {
+  color: var(--zb-accent-ink) !important;
+  background: var(--zb-accent-tint) !important;
+}
+
+/* avatar / settings dropdown button */
+#nc-root [class*="-AvatarDropdownButton"] {
+  border-radius: 50% !important;
+  transition: box-shadow 120ms ease;
+}
+#nc-root [class*="-AvatarDropdownButton"]:hover {
+  box-shadow: 0 0 0 3px var(--zb-accent-ring) !important;
+}
+
+/* --------------------------------------------------------------------------
+   Sidebar  ( aside css-…-SidebarContainer-card-card )
+   -------------------------------------------------------------------------- */
+#nc-root aside[class*="-SidebarContainer"] {
+  background: var(--zb-surface) !important;
+  border: 1px solid var(--zb-border) !important;
+  border-radius: var(--zb-radius-lg) !important;
+  box-shadow: var(--zb-shadow-sm) !important;
+  padding: 14px !important;
+}
+#nc-root [class*="-SidebarHeading"] {
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em !important;
+  text-transform: none !important;
+  color: var(--zb-ink-2) !important;
+  padding: 4px 8px 10px !important;
+}
+
+/* sidebar search field */
+#nc-root [class*="-SearchContainer"] [class*="-InputContainer"],
+#nc-root [class*="-SearchContainer"] {
+  background: var(--zb-surface-2) !important;
+  border: 1px solid var(--zb-border) !important;
+  border-radius: var(--zb-radius) !important;
+}
+#nc-root input[class*="-SearchInput"] {
+  background: transparent !important;
+  border: 0 !important;
+  color: var(--zb-ink) !important;
+  font-size: 14px !important;
+}
+#nc-root input[class*="-SearchInput"]::placeholder { color: var(--zb-ink-3) !important; }
+#nc-root [class*="-SearchContainer"]:focus-within {
+  border-color: var(--zb-accent) !important;
+  box-shadow: 0 0 0 3px var(--zb-accent-ring) !important;
+}
+
+/* collection nav links */
+#nc-root a[class*="-SidebarNavLink"] {
+  color: var(--zb-ink-2) !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  border-radius: var(--zb-radius) !important;
+  padding: 8px 10px !important;
+  margin: 1px 0 !important;
+  border-left: 0 !important;                 /* kill Decap's active bar    */
+  transition: background 120ms ease, color 120ms ease;
+}
+#nc-root a[class*="-SidebarNavLink"]:hover {
+  background: var(--zb-surface-2) !important;
+  color: var(--zb-ink) !important;
+}
+/* NB: emotion bakes the label fragment "sidebarNavLinkActive" into EVERY
+   nav link's class string; only the genuinely-active link also gets the
+   stable `.sidebar-active` class — so match on that alone. */
+#nc-root a[class*="-SidebarNavLink"].sidebar-active {
+  background: var(--zb-accent-tint) !important;
+  color: var(--zb-accent-ink) !important;
+  font-weight: 600 !important;
+}
+#nc-root a[class*="-SidebarNavLink"] [class*="-IconWrapper"] svg { opacity: 0.9; }
+
+/* --------------------------------------------------------------------------
+   Collection view — top bar + card grid
+   -------------------------------------------------------------------------- */
+#nc-root [class*="-CollectionTopContainer"] {
+  background: var(--zb-surface) !important;
+  border: 1px solid var(--zb-border) !important;
+  border-radius: var(--zb-radius-lg) !important;
+  box-shadow: var(--zb-shadow-sm) !important;
+  padding: 18px 20px !important;
+}
+#nc-root [class*="-CollectionTopHeading"] {
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  color: var(--zb-ink) !important;
+  letter-spacing: -0.01em !important;
+}
+
+/* list / grid view toggle */
+#nc-root button[class*="-ViewControlsButton"] {
+  color: var(--zb-ink-3) !important;
+  border-radius: var(--zb-radius-sm) !important;
+  padding: 6px !important;
+  transition: background 120ms ease, color 120ms ease;
+}
+#nc-root button[class*="-ViewControlsButton"]:hover {
+  color: var(--zb-ink) !important;
+  background: var(--zb-surface-2) !important;
+}
+#nc-root button[class*="-ViewControlsButton"][class*="ctive"],
+#nc-root button[class*="-ViewControlsButton"][aria-pressed="true"] {
+  color: var(--zb-accent-ink) !important;
+  background: var(--zb-accent-tint) !important;
+}
+
+/* entry cards */
+#nc-root li[class*="-ListCard"] {
+  background: var(--zb-surface) !important;
+  border: 1px solid var(--zb-border) !important;
+  border-radius: var(--zb-radius) !important;
+  box-shadow: var(--zb-shadow-sm) !important;
+  overflow: hidden !important;
+  transition: box-shadow 140ms ease, border-color 140ms ease, transform 60ms ease;
+}
+#nc-root li[class*="-ListCard"]:hover {
+  border-color: var(--zb-border-strong) !important;
+  box-shadow: var(--zb-shadow-md) !important;
+}
+#nc-root a[class*="-ListCardLink"] { padding: 16px 18px !important; }
+#nc-root [class*="-ListCardTitle"] {
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  color: var(--zb-ink) !important;
+}
+
+/* --------------------------------------------------------------------------
+   Editor toolbar  ( css-…-ToolbarContainer )
+   -------------------------------------------------------------------------- */
+#nc-root [class*="-ToolbarContainer"] {
+  background: var(--zb-surface) !important;
+  border-bottom: 1px solid var(--zb-border) !important;
+  box-shadow: var(--zb-shadow-sm) !important;
+}
+#nc-root [class*="-BackCollection"] {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: var(--zb-ink) !important;
+}
+#nc-root [class*="-BackStatus"] {
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em !important;
+  color: var(--zb-ink-3) !important;
+}
+#nc-root [class*="-BackArrow"] { color: var(--zb-ink-2) !important; }
+
+/* primary publish button */
+#nc-root button[class*="-ToolbarButton"] {
+  background: var(--zb-accent-solid) !important;
+  color: #fff !important;
+  border: 0 !important;
+  border-radius: var(--zb-radius) !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  box-shadow: var(--zb-shadow-sm) !important;
+  transition: background 120ms ease;
+}
+#nc-root button[class*="-ToolbarButton"]:hover { background: var(--zb-accent-hover) !important; }
+
+/* "Опубликовано" / published state — calm green chip, not a CTA */
+#nc-root button[class*="-PublishedButton"] {
+  background: #e7f4ee !important;
+  color: #12805c !important;
+  box-shadow: inset 0 0 0 1px rgba(18, 128, 92, 0.20) !important;
+}
+#nc-root button[class*="-PublishedButton"]:hover { background: #dcefe4 !important; }
+
+/* "Проверить предварительный просмотр" link-button */
+#nc-root button[class*="-RefreshPreviewButton"] {
+  color: var(--zb-accent-ink) !important;
+  font-weight: 500 !important;
+  font-size: 13px !important;
+}
+
+/* --------------------------------------------------------------------------
+   Editor — control pane (the form on the left)
+   -------------------------------------------------------------------------- */
+#nc-root [class*="-ControlPaneContainer"] { padding: 20px 22px !important; }
+
+/* every field wrapper */
+#nc-root [class*="-ControlContainer"] { margin-bottom: 16px !important; }
+
+/* field labels — sentence case, small, quiet; drop Decap's grey "tab" chip
+   (default: bg #dfdfe3, border-radius 3px 3px 0 0, left padding) */
+#nc-root label[class*="-FieldLabel"] {
+  text-transform: none !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.01em !important;
+  color: var(--zb-ink-2) !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  padding: 0 0 6px !important;
+  margin-bottom: 0 !important;
+}
+#nc-root label[class*="-FieldLabel"][class*="rror"] { color: #d64545 !important; }
+
+/* text inputs + textareas (bare emotion hash — match structurally).
+   Exclude react-select's internal combobox <input role="combobox"> — styling
+   it as a bordered field inflates the whole select control. */
+#nc-root [class*="-ControlContainer"] input:not([type="checkbox"]):not([type="radio"]):not([type="file"]):not([role="combobox"]),
+#nc-root [class*="-ControlContainer"] textarea,
+#nc-root textarea[class*="-TextControl"] {
+  background: var(--zb-surface) !important;
+  border: 1px solid var(--zb-border) !important;
+  border-radius: var(--zb-radius) !important;
+  padding: 9px 12px !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+  color: var(--zb-ink) !important;
+  box-shadow: none !important;
+  transition: border-color 120ms ease, box-shadow 120ms ease;
+}
+#nc-root [class*="-ControlContainer"] input:focus,
+#nc-root [class*="-ControlContainer"] textarea:focus,
+#nc-root textarea[class*="-TextControl"]:focus {
+  outline: 0 !important;
+  border-color: var(--zb-accent) !important;
+  box-shadow: 0 0 0 3px var(--zb-accent-ring) !important;
+}
+#nc-root [class*="-ControlContainer"] input::placeholder,
+#nc-root [class*="-ControlContainer"] textarea::placeholder { color: var(--zb-ink-3) !important; }
+
+/* react-select (the "Тема" dropdown, image field selects) */
+#nc-root [class*="-ControlContainer"] [class*="-control"] {
+  background: var(--zb-surface) !important;
+  border: 1px solid var(--zb-border) !important;
+  border-radius: var(--zb-radius) !important;
+  box-shadow: none !important;
+  min-height: 38px !important;
+}
+#nc-root [class*="-ControlContainer"] [class*="-control"]:hover { border-color: var(--zb-border-strong) !important; }
+/* keep react-select's inner combobox input flat so the control keeps its height */
+#nc-root [class*="-ControlContainer"] [class*="-control"] input {
+  border: 0 !important;
+  padding: 0 !important;
+  height: auto !important;
+  box-shadow: none !important;
+}
+#nc-root [class*="-ControlContainer"] [class*="-singleValue"] {
+  color: var(--zb-ink) !important;
+  font-size: 14px !important;
+}
+#nc-root [class*="-ControlContainer"] [class*="-control"][class*="--is-focused"],
+#nc-root [class*="-ControlContainer"] [class*="-control"]:focus-within {
+  border-color: var(--zb-accent) !important;
+  box-shadow: 0 0 0 3px var(--zb-accent-ring) !important;
+}
+#nc-root [class*="-menu"] {
+  border-radius: var(--zb-radius) !important;
+  border: 1px solid var(--zb-border) !important;
+  box-shadow: var(--zb-shadow-md) !important;
+  overflow: hidden !important;
+}
+#nc-root [class*="-option"][class*="--is-focused"] { background: var(--zb-accent-tint) !important; }
+#nc-root [class*="-option"][class*="--is-selected"] {
+  background: var(--zb-accent-solid) !important;
+  color: #fff !important;
+}
+
+/* --------------------------------------------------------------------------
+   Editor — object & list widgets
+   -------------------------------------------------------------------------- */
+/* header strip of an object/list widget (holds collapse + "Добавить …") */
+#nc-root [class*="-TopBarContainer"] {
+  background: var(--zb-surface-2) !important;
+  border: 1px solid var(--zb-border) !important;
+  border-radius: var(--zb-radius) !important;
+  padding: 6px 8px 6px 10px !important;
+}
+
+/* collapse chevron for object/list */
+#nc-root button[class*="-ExpandButton"] {
+  color: var(--zb-ink-2) !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+  border-radius: var(--zb-radius-sm) !important;
+}
+#nc-root [class*="-ExpandButtonContainer"] { color: var(--zb-ink-2) !important; font-size: 13px !important; }
+
+/* "Добавить …" button — accent-tinted, not a heavy CTA */
+#nc-root button[class*="-AddButton"] {
+  background: var(--zb-accent-tint) !important;
+  color: var(--zb-accent-ink) !important;
+  border: 1px solid rgba(77, 143, 196, 0.25) !important;
+  border-radius: var(--zb-radius) !important;
+  padding: 6px 12px !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+  box-shadow: none !important;
+  transition: background 120ms ease;
+}
+#nc-root button[class*="-AddButton"]:hover { background: var(--zb-accent-tint-2) !important; }
+
+/* list items */
+#nc-root [class*="-SortableListItem"] {
+  background: var(--zb-surface) !important;
+  border: 1px solid var(--zb-border) !important;
+  border-radius: var(--zb-radius) !important;
+  margin-bottom: 8px !important;
+  overflow: hidden !important;
+  box-shadow: var(--zb-shadow-sm) !important;
+}
+#nc-root [class*="-StyledListItemTopBar"] {
+  background: var(--zb-surface-2) !important;
+  border-bottom: 1px solid var(--zb-border) !important;
+  padding: 4px 6px !important;
+}
+#nc-root button[class*="-TopBarButton"] {
+  color: var(--zb-ink-3) !important;
+  border-radius: var(--zb-radius-sm) !important;
+  transition: background 120ms ease, color 120ms ease;
+}
+#nc-root button[class*="-TopBarButton"]:hover {
+  color: var(--zb-ink) !important;
+  background: rgba(16, 24, 40, 0.06) !important;
+}
+#nc-root [class*="-NestedObjectLabel"] {
+  background: var(--zb-surface) !important;   /* default is grey #dfdfe3 */
+  color: var(--zb-ink) !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  border-radius: 0 !important;
+  padding: 10px 12px !important;
+}
+
+/* --------------------------------------------------------------------------
+   Editor — preview pane (right side)
+   -------------------------------------------------------------------------- */
+#nc-root [class*="-PreviewPaneContainer"],
+#nc-root [class*="-PreviewContainer"] {
+  background: var(--zb-surface) !important;
+  border-left: 1px solid var(--zb-border) !important;
+}
+#nc-root [class*="-PreviewContainer"] {
+  padding: 24px 28px !important;
+  color: var(--zb-ink) !important;
+  font-size: 14px !important;
+  line-height: 1.65 !important;
+}
+#nc-root [class*="-PreviewContainer"] h1,
+#nc-root [class*="-PreviewContainer"] h2,
+#nc-root [class*="-PreviewContainer"] h3 {
+  color: var(--zb-ink) !important;
+  font-weight: 600 !important;
+  margin: 1.2em 0 0.4em !important;
+}
+#nc-root [class*="-PreviewContainer"] strong { color: var(--zb-ink) !important; }
+
+/* --------------------------------------------------------------------------
+   Modals + media library  (portaled to body via ReactModal)
+   -------------------------------------------------------------------------- */
+body .ReactModal__Overlay {
+  background: rgba(16, 24, 40, 0.45) !important;
+  backdrop-filter: blur(2px) !important;
+}
+body .ReactModal__Content {
+  border: 1px solid var(--zb-border) !important;
+  border-radius: var(--zb-radius-lg) !important;
+  box-shadow: var(--zb-shadow-lg) !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+}
+body [class*="-MediaLibraryTop"],
+body [class*="-MediaLibraryModal"] [class*="-Header"] {
+  background: var(--zb-surface) !important;
+  border-bottom: 1px solid var(--zb-border) !important;
+}
+body [class*="-MediaLibraryCard"] {
+  border: 1px solid var(--zb-border) !important;
+  border-radius: var(--zb-radius) !important;
+  box-shadow: var(--zb-shadow-sm) !important;
+  transition: border-color 140ms ease, box-shadow 140ms ease;
+}
+body [class*="-MediaLibraryCard"]:hover {
+  border-color: var(--zb-accent) !important;
+  box-shadow: var(--zb-shadow-md) !important;
+}
+body [class*="-MediaLibraryCard"][class*="elected"] {
+  border-color: var(--zb-accent) !important;
+  box-shadow: 0 0 0 3px var(--zb-accent-ring) !important;
+}
+
+/* generic buttons inside modals */
+body .ReactModal__Content button[class*="-button"] {
+  border-radius: var(--zb-radius) !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+}
+
+/* --------------------------------------------------------------------------
+   Toasts
+   -------------------------------------------------------------------------- */
+.Toastify__toast {
+  border-radius: var(--zb-radius) !important;
+  box-shadow: var(--zb-shadow-md) !important;
+  font-size: 13px !important;
+}
+
+/* --------------------------------------------------------------------------
+   Generic buttons that carry a stable "-button-button" label but no
+   more-specific rule above — keep them consistent, low emphasis.
+   -------------------------------------------------------------------------- */
+#nc-root button[class*="-button-button"]:not([class*="-ToolbarButton"]):not([class*="-AddButton"]):not([class*="-PublishedButton"]):not([class*="-ExpandButton"]):not([class*="-TopBarButton"]):not([class*="-ViewControlsButton"]) {
+  border-radius: var(--zb-radius) !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+}
